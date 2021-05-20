@@ -1,0 +1,233 @@
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
+| Date         : Thu May 20 23:05:13 2021
+| Host         : DESKTOP-O8KMG5M running 64-bit major release  (build 9200)
+| Command      : report_methodology -file top_methodology_drc_routed.rpt -pb top_methodology_drc_routed.pb -rpx top_methodology_drc_routed.rpx
+| Design       : top
+| Device       : xc7a35tcpg236-1
+| Speed File   : -1
+| Design State : Fully Routed
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+Report Methodology
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+             Max violations: <unlimited>
+             Violations found: 39
++-----------+----------+--------------------------------------------+------------+
+| Rule      | Severity | Description                                | Violations |
++-----------+----------+--------------------------------------------+------------+
+| LUTAR-1   | Warning  | LUT drives async reset alert               | 1          |
+| SYNTH-6   | Warning  | Timing of a RAM block might be sub-optimal | 5          |
+| TIMING-16 | Warning  | Large setup violation                      | 1          |
+| TIMING-20 | Warning  | Non-clocked latch                          | 32         |
++-----------+----------+--------------------------------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+LUTAR-1#1 Warning
+LUT drives async reset alert  
+LUT cell risc_v_inst/skip_execution_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) rtc_inst/int_rst_int_n_reg/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+SYNTH-6#1 Warning
+Timing of a RAM block might be sub-optimal  
+The timing for the instance ram_inst/mem_b0_reg, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+Related violations: <none>
+
+SYNTH-6#2 Warning
+Timing of a RAM block might be sub-optimal  
+The timing for the instance ram_inst/mem_b1_reg, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+Related violations: <none>
+
+SYNTH-6#3 Warning
+Timing of a RAM block might be sub-optimal  
+The timing for the instance ram_inst/mem_b2_reg, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+Related violations: <none>
+
+SYNTH-6#4 Warning
+Timing of a RAM block might be sub-optimal  
+The timing for the instance ram_inst/mem_b3_reg, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+Related violations: <none>
+
+SYNTH-6#5 Warning
+Timing of a RAM block might be sub-optimal  
+The timing for the instance rom_dp_inst/TMP_reg__0, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+Related violations: <none>
+
+TIMING-16#1 Warning
+Large setup violation  
+There is a large setup violation of -1.048 ns between risc_v_inst/regs_inst/rda_del_reg[4]/C (clocked by core_clk) and risc_v_inst/PC_reg[5]/D (clocked by core_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-20#1 Warning
+Non-clocked latch  
+The latch risc_v_inst/risc_v_alu_lite_inst/rd_reg[0] cannot be properly analyzed as its control pin risc_v_inst/risc_v_alu_lite_inst/rd_reg[0]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#2 Warning
+Non-clocked latch  
+The latch risc_v_inst/risc_v_alu_lite_inst/rd_reg[10] cannot be properly analyzed as its control pin risc_v_inst/risc_v_alu_lite_inst/rd_reg[10]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#3 Warning
+Non-clocked latch  
+The latch risc_v_inst/risc_v_alu_lite_inst/rd_reg[11] cannot be properly analyzed as its control pin risc_v_inst/risc_v_alu_lite_inst/rd_reg[11]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#4 Warning
+Non-clocked latch  
+The latch risc_v_inst/risc_v_alu_lite_inst/rd_reg[12] cannot be properly analyzed as its control pin risc_v_inst/risc_v_alu_lite_inst/rd_reg[12]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#5 Warning
+Non-clocked latch  
+The latch risc_v_inst/risc_v_alu_lite_inst/rd_reg[13] cannot be properly analyzed as its control pin risc_v_inst/risc_v_alu_lite_inst/rd_reg[13]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#6 Warning
+Non-clocked latch  
+The latch risc_v_inst/risc_v_alu_lite_inst/rd_reg[14] cannot be properly analyzed as its control pin risc_v_inst/risc_v_alu_lite_inst/rd_reg[14]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#7 Warning
+Non-clocked latch  
+The latch risc_v_inst/risc_v_alu_lite_inst/rd_reg[15] cannot be properly analyzed as its control pin risc_v_inst/risc_v_alu_lite_inst/rd_reg[15]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#8 Warning
+Non-clocked latch  
+The latch risc_v_inst/risc_v_alu_lite_inst/rd_reg[16] cannot be properly analyzed as its control pin risc_v_inst/risc_v_alu_lite_inst/rd_reg[16]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#9 Warning
+Non-clocked latch  
+The latch risc_v_inst/risc_v_alu_lite_inst/rd_reg[17] cannot be properly analyzed as its control pin risc_v_inst/risc_v_alu_lite_inst/rd_reg[17]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#10 Warning
+Non-clocked latch  
+The latch risc_v_inst/risc_v_alu_lite_inst/rd_reg[18] cannot be properly analyzed as its control pin risc_v_inst/risc_v_alu_lite_inst/rd_reg[18]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#11 Warning
+Non-clocked latch  
+The latch risc_v_inst/risc_v_alu_lite_inst/rd_reg[19] cannot be properly analyzed as its control pin risc_v_inst/risc_v_alu_lite_inst/rd_reg[19]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#12 Warning
+Non-clocked latch  
+The latch risc_v_inst/risc_v_alu_lite_inst/rd_reg[1] cannot be properly analyzed as its control pin risc_v_inst/risc_v_alu_lite_inst/rd_reg[1]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#13 Warning
+Non-clocked latch  
+The latch risc_v_inst/risc_v_alu_lite_inst/rd_reg[20] cannot be properly analyzed as its control pin risc_v_inst/risc_v_alu_lite_inst/rd_reg[20]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#14 Warning
+Non-clocked latch  
+The latch risc_v_inst/risc_v_alu_lite_inst/rd_reg[21] cannot be properly analyzed as its control pin risc_v_inst/risc_v_alu_lite_inst/rd_reg[21]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#15 Warning
+Non-clocked latch  
+The latch risc_v_inst/risc_v_alu_lite_inst/rd_reg[22] cannot be properly analyzed as its control pin risc_v_inst/risc_v_alu_lite_inst/rd_reg[22]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#16 Warning
+Non-clocked latch  
+The latch risc_v_inst/risc_v_alu_lite_inst/rd_reg[23] cannot be properly analyzed as its control pin risc_v_inst/risc_v_alu_lite_inst/rd_reg[23]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#17 Warning
+Non-clocked latch  
+The latch risc_v_inst/risc_v_alu_lite_inst/rd_reg[24] cannot be properly analyzed as its control pin risc_v_inst/risc_v_alu_lite_inst/rd_reg[24]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#18 Warning
+Non-clocked latch  
+The latch risc_v_inst/risc_v_alu_lite_inst/rd_reg[25] cannot be properly analyzed as its control pin risc_v_inst/risc_v_alu_lite_inst/rd_reg[25]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#19 Warning
+Non-clocked latch  
+The latch risc_v_inst/risc_v_alu_lite_inst/rd_reg[26] cannot be properly analyzed as its control pin risc_v_inst/risc_v_alu_lite_inst/rd_reg[26]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#20 Warning
+Non-clocked latch  
+The latch risc_v_inst/risc_v_alu_lite_inst/rd_reg[27] cannot be properly analyzed as its control pin risc_v_inst/risc_v_alu_lite_inst/rd_reg[27]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#21 Warning
+Non-clocked latch  
+The latch risc_v_inst/risc_v_alu_lite_inst/rd_reg[28] cannot be properly analyzed as its control pin risc_v_inst/risc_v_alu_lite_inst/rd_reg[28]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#22 Warning
+Non-clocked latch  
+The latch risc_v_inst/risc_v_alu_lite_inst/rd_reg[29] cannot be properly analyzed as its control pin risc_v_inst/risc_v_alu_lite_inst/rd_reg[29]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#23 Warning
+Non-clocked latch  
+The latch risc_v_inst/risc_v_alu_lite_inst/rd_reg[2] cannot be properly analyzed as its control pin risc_v_inst/risc_v_alu_lite_inst/rd_reg[2]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#24 Warning
+Non-clocked latch  
+The latch risc_v_inst/risc_v_alu_lite_inst/rd_reg[30] cannot be properly analyzed as its control pin risc_v_inst/risc_v_alu_lite_inst/rd_reg[30]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#25 Warning
+Non-clocked latch  
+The latch risc_v_inst/risc_v_alu_lite_inst/rd_reg[31] cannot be properly analyzed as its control pin risc_v_inst/risc_v_alu_lite_inst/rd_reg[31]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#26 Warning
+Non-clocked latch  
+The latch risc_v_inst/risc_v_alu_lite_inst/rd_reg[3] cannot be properly analyzed as its control pin risc_v_inst/risc_v_alu_lite_inst/rd_reg[3]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#27 Warning
+Non-clocked latch  
+The latch risc_v_inst/risc_v_alu_lite_inst/rd_reg[4] cannot be properly analyzed as its control pin risc_v_inst/risc_v_alu_lite_inst/rd_reg[4]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#28 Warning
+Non-clocked latch  
+The latch risc_v_inst/risc_v_alu_lite_inst/rd_reg[5] cannot be properly analyzed as its control pin risc_v_inst/risc_v_alu_lite_inst/rd_reg[5]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#29 Warning
+Non-clocked latch  
+The latch risc_v_inst/risc_v_alu_lite_inst/rd_reg[6] cannot be properly analyzed as its control pin risc_v_inst/risc_v_alu_lite_inst/rd_reg[6]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#30 Warning
+Non-clocked latch  
+The latch risc_v_inst/risc_v_alu_lite_inst/rd_reg[7] cannot be properly analyzed as its control pin risc_v_inst/risc_v_alu_lite_inst/rd_reg[7]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#31 Warning
+Non-clocked latch  
+The latch risc_v_inst/risc_v_alu_lite_inst/rd_reg[8] cannot be properly analyzed as its control pin risc_v_inst/risc_v_alu_lite_inst/rd_reg[8]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#32 Warning
+Non-clocked latch  
+The latch risc_v_inst/risc_v_alu_lite_inst/rd_reg[9] cannot be properly analyzed as its control pin risc_v_inst/risc_v_alu_lite_inst/rd_reg[9]/G is not reached by a timing clock
+Related violations: <none>
+
+

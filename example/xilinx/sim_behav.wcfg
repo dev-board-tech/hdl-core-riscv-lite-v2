@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="sim_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="sim" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="20241816fs"></ZoomStartTime>
+      <ZoomEndTime time="20351117fs"></ZoomEndTime>
+      <Cursor1Time time="20271756fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="239"></NameColumnWidth>
+      <ValueColumnWidth column_width="58"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="46" />
+   <wvobject fp_name="/sim/top_inst/pll_locked" type="logic">
+      <obj_property name="ElementShortName">pll_locked</obj_property>
+      <obj_property name="ObjectShortName">pll_locked</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim/top_inst/pgm_addr" type="array">
+      <obj_property name="ElementShortName">pgm_addr[15:0]</obj_property>
+      <obj_property name="ObjectShortName">pgm_addr[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim/top_inst/pgm_data" type="array">
+      <obj_property name="ElementShortName">pgm_data[31:0]</obj_property>
+      <obj_property name="ObjectShortName">pgm_data[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim/top_inst/risc_v_inst/instruction_latch" type="array">
+      <obj_property name="ElementShortName">instruction_latch[31:0]</obj_property>
+      <obj_property name="ObjectShortName">instruction_latch[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim/top_inst/data_addr" type="array">
+      <obj_property name="ElementShortName">data_addr[15:0]</obj_property>
+      <obj_property name="ObjectShortName">data_addr[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim/top_inst/data_out" type="array">
+      <obj_property name="ElementShortName">data_out[31:0]</obj_property>
+      <obj_property name="ObjectShortName">data_out[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim/top_inst/data_wr_w" type="logic">
+      <obj_property name="ElementShortName">data_wr_w</obj_property>
+      <obj_property name="ObjectShortName">data_wr_w</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim/top_inst/data_wr_h" type="logic">
+      <obj_property name="ElementShortName">data_wr_h</obj_property>
+      <obj_property name="ObjectShortName">data_wr_h</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim/top_inst/data_wr_b" type="logic">
+      <obj_property name="ElementShortName">data_wr_b</obj_property>
+      <obj_property name="ObjectShortName">data_wr_b</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim/top_inst/data_in" type="array">
+      <obj_property name="ElementShortName">data_in[31:0]</obj_property>
+      <obj_property name="ObjectShortName">data_in[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim/top_inst/data_rd_w" type="logic">
+      <obj_property name="ElementShortName">data_rd_w</obj_property>
+      <obj_property name="ObjectShortName">data_rd_w</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim/top_inst/data_rd_h" type="logic">
+      <obj_property name="ElementShortName">data_rd_h</obj_property>
+      <obj_property name="ObjectShortName">data_rd_h</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim/top_inst/data_rd_b" type="logic">
+      <obj_property name="ElementShortName">data_rd_b</obj_property>
+      <obj_property name="ObjectShortName">data_rd_b</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim/top_inst/data_en" type="logic">
+      <obj_property name="ElementShortName">data_en</obj_property>
+      <obj_property name="ObjectShortName">data_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim/top_inst/pgm_en" type="logic">
+      <obj_property name="ElementShortName">pgm_en</obj_property>
+      <obj_property name="ObjectShortName">pgm_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim/top_inst/io_en" type="logic">
+      <obj_property name="ElementShortName">io_en</obj_property>
+      <obj_property name="ObjectShortName">io_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim/top_inst/risc_v_inst/rs1a" type="array">
+      <obj_property name="ElementShortName">rs1a[4:0]</obj_property>
+      <obj_property name="ObjectShortName">rs1a[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim/top_inst/risc_v_inst/rs1" type="array">
+      <obj_property name="ElementShortName">rs1[31:0]</obj_property>
+      <obj_property name="ObjectShortName">rs1[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim/top_inst/risc_v_inst/rs2a" type="array">
+      <obj_property name="ElementShortName">rs2a[4:0]</obj_property>
+      <obj_property name="ObjectShortName">rs2a[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim/top_inst/risc_v_inst/rs2" type="array">
+      <obj_property name="ElementShortName">rs2[31:0]</obj_property>
+      <obj_property name="ObjectShortName">rs2[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim/top_inst/risc_v_inst/rda" type="array">
+      <obj_property name="ElementShortName">rda[4:0]</obj_property>
+      <obj_property name="ObjectShortName">rda[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim/top_inst/risc_v_inst/rd" type="array">
+      <obj_property name="ElementShortName">rd[31:0]</obj_property>
+      <obj_property name="ObjectShortName">rd[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim/top_inst/risc_v_inst/rdw" type="logic">
+      <obj_property name="ElementShortName">rdw</obj_property>
+      <obj_property name="ObjectShortName">rdw</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim/top_inst/risc_v_inst/rd_alu" type="array">
+      <obj_property name="ElementShortName">rd_alu[31:0]</obj_property>
+      <obj_property name="ObjectShortName">rd_alu[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim/top_inst/int_sig" type="logic">
+      <obj_property name="ElementShortName">int_sig</obj_property>
+      <obj_property name="ObjectShortName">int_sig</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim/top_inst/int_ack" type="logic">
+      <obj_property name="ElementShortName">int_ack</obj_property>
+      <obj_property name="ObjectShortName">int_ack</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim/top_inst/risc_v_inst/int_request" type="logic">
+      <obj_property name="ElementShortName">int_request</obj_property>
+      <obj_property name="ObjectShortName">int_request</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim/top_inst/risc_v_inst/current_int_vect_request" type="array">
+      <obj_property name="ElementShortName">current_int_vect_request[0:0]</obj_property>
+      <obj_property name="ObjectShortName">current_int_vect_request[0:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim/top_inst/risc_v_inst/stage_cnt" type="array">
+      <obj_property name="ElementShortName">stage_cnt[1:0]</obj_property>
+      <obj_property name="ObjectShortName">stage_cnt[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim/top_inst/risc_v_inst/stage_cnt_del" type="array">
+      <obj_property name="ElementShortName">stage_cnt_del[1:0]</obj_property>
+      <obj_property name="ObjectShortName">stage_cnt_del[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim/top_inst/risc_v_inst/int_en_o" type="logic">
+      <obj_property name="ElementShortName">int_en_o</obj_property>
+      <obj_property name="ObjectShortName">int_en_o</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim/top_inst/risc_v_inst/reg_mie" type="array">
+      <obj_property name="ElementShortName">reg_mie[7:0]</obj_property>
+      <obj_property name="ObjectShortName">reg_mie[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim/top_inst/risc_v_inst/reg_mstatus" type="array">
+      <obj_property name="ElementShortName">reg_mstatus[7:0]</obj_property>
+      <obj_property name="ObjectShortName">reg_mstatus[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim/top_inst/risc_v_inst/reg_mcause" type="array">
+      <obj_property name="ElementShortName">reg_mcause[7:0]</obj_property>
+      <obj_property name="ObjectShortName">reg_mcause[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim/top_inst/risc_v_inst/reg_mscratch" type="array">
+      <obj_property name="ElementShortName">reg_mscratch[15:0]</obj_property>
+      <obj_property name="ObjectShortName">reg_mscratch[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim/top_inst/risc_v_inst/put_int_table_addr" type="logic">
+      <obj_property name="ElementShortName">put_int_table_addr</obj_property>
+      <obj_property name="ObjectShortName">put_int_table_addr</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim/top_inst/risc_v_inst/RIP" type="array">
+      <obj_property name="ElementShortName">RIP[15:0]</obj_property>
+      <obj_property name="ObjectShortName">RIP[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim/top_inst/risc_v_inst/skip_execution" type="logic">
+      <obj_property name="ElementShortName">skip_execution</obj_property>
+      <obj_property name="ObjectShortName">skip_execution</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim/top_inst/risc_v_inst/skip_execution_del" type="logic">
+      <obj_property name="ElementShortName">skip_execution_del</obj_property>
+      <obj_property name="ObjectShortName">skip_execution_del</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim/top_inst/risc_v_inst/data_sysreg_int" type="array">
+      <obj_property name="ElementShortName">data_sysreg_int[31:0]</obj_property>
+      <obj_property name="ObjectShortName">data_sysreg_int[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim/top_inst/LED" type="array">
+      <obj_property name="ElementShortName">LED[1:0]</obj_property>
+      <obj_property name="ObjectShortName">LED[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim/top_inst/RGB0_Red" type="logic">
+      <obj_property name="ElementShortName">RGB0_Red</obj_property>
+      <obj_property name="ObjectShortName">RGB0_Red</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim/top_inst/RGB0_Green" type="logic">
+      <obj_property name="ElementShortName">RGB0_Green</obj_property>
+      <obj_property name="ObjectShortName">RGB0_Green</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim/top_inst/RGB0_Blue" type="logic">
+      <obj_property name="ElementShortName">RGB0_Blue</obj_property>
+      <obj_property name="ObjectShortName">RGB0_Blue</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim/top_inst/rom_select" type="logic">
+      <obj_property name="ElementShortName">rom_select</obj_property>
+      <obj_property name="ObjectShortName">rom_select</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sim/top_inst/ram_select" type="logic">
+      <obj_property name="ElementShortName">ram_select</obj_property>
+      <obj_property name="ObjectShortName">ram_select</obj_property>
+   </wvobject>
+</wave_config>

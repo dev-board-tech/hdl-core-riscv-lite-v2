@@ -1,0 +1,13 @@
+#Start recording tcl command: 5/17/2021 12:00:19
+#Project Location: D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2/prj/lattice; Project name: hdl_core_riscv_lite_v2
+prj_open "D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2/prj/lattice/hdl_core_riscv_lite_v2.rdf"
+prj_run Export -impl impl_1
+prj_run Map -impl impl_1
+prj_run Map -impl impl_1
+prj_run Map -impl impl_1
+prj_run PAR -impl impl_1
+prj_run Map -impl impl_1
+prj_run Map -impl impl_1
+prj_run Map -impl impl_1
+prj_run PAR -impl impl_1
+#Stop recording: 5/18/2021 03:01:17

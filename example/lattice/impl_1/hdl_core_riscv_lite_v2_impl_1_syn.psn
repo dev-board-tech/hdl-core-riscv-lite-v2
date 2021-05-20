@@ -1,0 +1,27 @@
+POSTSYN: Post Synthesis Process Radiant Software (64-bit) 2.2.1.239.2
+Command Line: postsyn -a iCE40UP -p iCE40UP5K -t SG48 -sp High-Performance_1.2V -oc Industrial -top -w -o hdl_core_riscv_lite_v2_impl_1_syn.udb -ldc C:/GitHubDevBoard/hdl-core-riscv-lite-v2/example/lattice/impl_1/hdl_core_riscv_lite_v2_impl_1.ldc -gui -msgset C:/GitHubDevBoard/hdl-core-riscv-lite-v2/example/lattice/promote.xml hdl_core_riscv_lite_v2_impl_1.vm 
+   Architecture:     iCE40UP
+   Device:           iCE40UP5K
+   Package:          SG48
+   Performance:      High-Performance_1.2V
+Reading input file 'hdl_core_riscv_lite_v2_impl_1.vm' ...
+Reading constraint file 'C:/GitHubDevBoard/hdl-core-riscv-lite-v2/example/lattice/impl_1/hdl_core_riscv_lite_v2_impl_1.ldc' ...
+Removing unused logic...
+INFO - Signal ardyFPGA_inst/Open_13 undriven or does not drive anything - clipped
+INFO - Signal ardyFPGA_inst/Open_14 undriven or does not drive anything - clipped
+INFO - Signal ardyFPGA_inst/Open_15 undriven or does not drive anything - clipped
+INFO - Signal ardyFPGA_inst/Open_16 undriven or does not drive anything - clipped
+INFO - Signal ardyFPGA_inst/Open_17 undriven or does not drive anything - clipped
+INFO - Signal ardyFPGA_inst/Open_18 undriven or does not drive anything - clipped
+INFO - Signal ardyFPGA_inst/Open_19 undriven or does not drive anything - clipped
+INFO - Signal ardyFPGA_inst/Open_20 undriven or does not drive anything - clipped
+INFO - Signal ardyFPGA_inst/Open_21 undriven or does not drive anything - clipped
+INFO - Signal ardyFPGA_inst/Open_22 undriven or does not drive anything - clipped
+INFO - ... More signals are undriven or does not drive anything - clipped
+Starting design annotation....
+WARNING - The preferred point for defining clocks is top level ports and driver pins. Pad delays will not be taken into consideration if clocks are defined on nets.
+Writing output file 'hdl_core_riscv_lite_v2_impl_1_syn.udb'.
+POSTSYN finished successfully.
+Total CPU Time: 0 secs 
+Total REAL Time: 0 secs 
+Peak Memory Usage: 43 MB

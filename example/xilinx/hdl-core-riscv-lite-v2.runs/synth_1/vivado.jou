@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Thu May 20 23:00:27 2021
+# Process ID: 39672
+# Current directory: C:/GitHubDevBoard/hdl-core-riscv-lite-v2/example/xilinx/hdl-core-riscv-lite-v2.runs/synth_1
+# Command line: vivado.exe -log top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
+# Log file: C:/GitHubDevBoard/hdl-core-riscv-lite-v2/example/xilinx/hdl-core-riscv-lite-v2.runs/synth_1/top.vds
+# Journal file: C:/GitHubDevBoard/hdl-core-riscv-lite-v2/example/xilinx/hdl-core-riscv-lite-v2.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source top.tcl -notrace

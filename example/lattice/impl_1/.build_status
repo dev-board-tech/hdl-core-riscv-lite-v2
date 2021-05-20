@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BuildStatus>
+    <Strategy name="Strategy1">
+        <Milestone name="Export" build_result="0" build_time="1621543415">
+            <Task name="Bitgen" build_result="0" update_result="2" update_time="1621543415"/>
+            <Task name="IBIS" build_result="0" update_result="2" update_time="1621543415"/>
+            <Task name="TimingSimFileVlg" build_result="0" update_result="2" update_time="1621543415"/>
+        </Milestone>
+        <Milestone name="Map" build_result="0" build_time="1621543414">
+            <Task name="Map" build_result="0" update_result="2" update_time="1621543414"/>
+            <Task name="MapTrace" build_result="0" update_result="2" update_time="1621543414"/>
+        </Milestone>
+        <Milestone name="PAR" build_result="0" build_time="1621543414">
+            <Task name="PAR" build_result="0" update_result="2" update_time="1621543414"/>
+            <Task name="PARTrace" build_result="0" update_result="2" update_time="1621543414"/>
+            <Task name="IOTiming" build_result="0" update_result="2" update_time="1621190277"/>
+        </Milestone>
+        <Milestone name="Synthesis" build_result="0" build_time="1621543414">
+            <Task name="Lattice_Synthesis" build_result="0" update_result="2" update_time="1621543414"/>
+            <Task name="LSE_Compile" build_result="0" update_result="2" update_time="1621543414"/>
+            <Task name="SynTrace" build_result="0" update_result="2" update_time="1621543414"/>
+            <Task name="SynVerilogSimFile" build_result="0" update_result="2" update_time="1621464861"/>
+        </Milestone>
+        <Report name="IBIS/hdl_core_riscv_lite_v2_impl_1.ibs" last_build_time="1621541076" last_build_size="45853"/>
+        <Report name="hdl_core_riscv_lite_v2_impl_1.bgn" last_build_time="1621541075" last_build_size="1034"/>
+        <Report name="hdl_core_riscv_lite_v2_impl_1.bin" last_build_time="1621541075" last_build_size="104156"/>
+        <Report name="hdl_core_riscv_lite_v2_impl_1.lsedata" last_build_time="0" last_build_size="0"/>
+        <Report name="hdl_core_riscv_lite_v2_impl_1.tw1.html" last_build_time="1621540857" last_build_size="878261"/>
+        <Report name="hdl_core_riscv_lite_v2_impl_1.twr.html" last_build_time="1621541071" last_build_size="760820"/>
+        <Report name="hdl_core_riscv_lite_v2_impl_1.tws.html" last_build_time="1621540853" last_build_size="916258"/>
+        <Report name="hdl_core_riscv_lite_v2_impl_1.udb" last_build_time="1621541058" last_build_size="286578"/>
+        <Report name="hdl_core_riscv_lite_v2_impl_1_map.udb" last_build_time="1621540855" last_build_size="145558"/>
+        <Report name="hdl_core_riscv_lite_v2_impl_1_rtl.udb" last_build_time="1621540826" last_build_size="77506"/>
+        <Report name="hdl_core_riscv_lite_v2_impl_1_syn.udb" last_build_time="1621540852" last_build_size="100921"/>
+        <Report name="hdl_core_riscv_lite_v2_impl_1_vo.sdf" last_build_time="1621541090" last_build_size="1972106"/>
+        <Report name="hdl_core_riscv_lite_v2_impl_1_vo.vo" last_build_time="1621541090" last_build_size="1778218"/>
+    </Strategy>
+</BuildStatus>

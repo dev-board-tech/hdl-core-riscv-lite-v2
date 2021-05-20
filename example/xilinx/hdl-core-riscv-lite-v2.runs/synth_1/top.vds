@@ -1,0 +1,405 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Thu May 20 23:00:27 2021
+# Process ID: 39672
+# Current directory: C:/GitHubDevBoard/hdl-core-riscv-lite-v2/example/xilinx/hdl-core-riscv-lite-v2.runs/synth_1
+# Command line: vivado.exe -log top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
+# Log file: C:/GitHubDevBoard/hdl-core-riscv-lite-v2/example/xilinx/hdl-core-riscv-lite-v2.runs/synth_1/top.vds
+# Journal file: C:/GitHubDevBoard/hdl-core-riscv-lite-v2/example/xilinx/hdl-core-riscv-lite-v2.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source top.tcl -notrace
+Command: synth_design -top top -part xc7a35tcpg236-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 39856
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1020.656 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'top' [C:/GitHubDevBoard/hdl-core-riscv-lite-v2/example/xilinx/hdl-core-riscv-lite-v2.srcs/sources_1/new/top.v:39]
+	Parameter DEBUG bound to: FALSE - type: string 
+INFO: [Synth 8-6157] synthesizing module 'MMCME2_BASE' [D:/Xilinx/Vivado/2020.2/scripts/rt/data/unisim_comp.v:40118]
+	Parameter BANDWIDTH bound to: OPTIMIZED - type: string 
+	Parameter CLKFBOUT_MULT_F bound to: 50.000000 - type: double 
+	Parameter CLKFBOUT_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKIN1_PERIOD bound to: 83.330000 - type: double 
+	Parameter CLKOUT0_DIVIDE_F bound to: 5.000000 - type: double 
+	Parameter CLKOUT0_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT0_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT1_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT1_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT1_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT2_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT2_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT2_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT3_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT3_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT3_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT4_CASCADE bound to: FALSE - type: string 
+	Parameter CLKOUT4_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT4_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT4_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT5_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT5_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT5_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT6_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT6_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT6_PHASE bound to: 0.000000 - type: double 
+	Parameter DIVCLK_DIVIDE bound to: 1 - type: integer 
+	Parameter REF_JITTER1 bound to: 0.000000 - type: double 
+	Parameter STARTUP_WAIT bound to: TRUE - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'MMCME2_BASE' (1#1) [D:/Xilinx/Vivado/2020.2/scripts/rt/data/unisim_comp.v:40118]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/GitHubDevBoard/hdl-core-riscv-lite-v2/example/xilinx/hdl-core-riscv-lite-v2.srcs/sources_1/new/top.v:151]
+INFO: [Synth 8-6157] synthesizing module 'rtc' [C:/GitHubDevBoard/hdl-core-common/io-atmega/atmega-rtc.v:23]
+	Parameter PERIOD_STATIC bound to: 120000 - type: integer 
+	Parameter CNT_SIZE bound to: 17 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'rtc' (2#1) [C:/GitHubDevBoard/hdl-core-common/io-atmega/atmega-rtc.v:23]
+INFO: [Synth 8-6157] synthesizing module 'rom_dp' [C:/GitHubDevBoard/hdl-core-riscv-lite-v2/memory.v:615]
+	Parameter PLATFORM bound to: XILINX - type: string 
+	Parameter EXTENSION_C bound to: FALSE - type: string 
+	Parameter ADDR_BUS_LEN bound to: 12 - type: integer 
+	Parameter ROM_PATH bound to: core1ROM_LightTest - type: string 
+	Parameter SYNCHRONOUS_OUTPUT bound to: TRUE - type: string 
+INFO: [Synth 8-3876] $readmem data file 'core1ROM_LightTest.mem' is read successfully [C:/GitHubDevBoard/hdl-core-riscv-lite-v2/memory.v:660]
+INFO: [Synth 8-6155] done synthesizing module 'rom_dp' (3#1) [C:/GitHubDevBoard/hdl-core-riscv-lite-v2/memory.v:615]
+INFO: [Synth 8-6157] synthesizing module 'ram' [C:/GitHubDevBoard/hdl-core-riscv-lite-v2/memory.v:23]
+	Parameter PLATFORM bound to: XILINX - type: string 
+	Parameter ADDR_BUS_LEN bound to: 12 - type: integer 
+	Parameter RAM_PATH bound to: (null) - type: string 
+	Parameter SYNCHRONOUS_OUTPUT bound to: TRUE - type: string 
+	Parameter RAM_MODE bound to: SRAM - type: string 
+INFO: [Synth 8-155] case statement is not full and has no default [C:/GitHubDevBoard/hdl-core-riscv-lite-v2/memory.v:90]
+INFO: [Synth 8-6155] done synthesizing module 'ram' (4#1) [C:/GitHubDevBoard/hdl-core-riscv-lite-v2/memory.v:23]
+INFO: [Synth 8-6157] synthesizing module 'io_bus_dmux' [C:/GitHubDevBoard/hdl-core-riscv-lite-v2/io_bus_dmux.v:23]
+	Parameter NR_OF_BUSSES_IN bound to: 2 - type: integer 
+	Parameter BITS_PER_BUS bound to: 32 - type: integer 
+	Parameter USE_OR_METHOD bound to: TRUE - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'io_bus_dmux' (5#1) [C:/GitHubDevBoard/hdl-core-riscv-lite-v2/io_bus_dmux.v:23]
+INFO: [Synth 8-6157] synthesizing module 'risc_v' [C:/GitHubDevBoard/hdl-core-riscv-lite-v2/risc-v-v2.v:82]
+	Parameter DEBUG bound to: FALSE - type: string 
+	Parameter PLATFORM bound to: XILINX - type: string 
+	Parameter SINGLE_BUS bound to: TRUE - type: string 
+	Parameter DATA_BUS_ALWAYS_CONNECTED bound to: TRUE - type: string 
+	Parameter ADDR_BUS_WIDTH bound to: 16 - type: integer 
+	Parameter RESET_VECTOR bound to: 16'b1000000000000000 
+	Parameter EXTENSION_C bound to: FALSE - type: string 
+	Parameter EXTENSION_M bound to: FALSE - type: string 
+	Parameter EXTENSION_MDIV bound to: FALSE - type: string 
+	Parameter WATCHDOG_CNT_WIDTH bound to: 0 - type: integer 
+	Parameter VECTOR_INT_TABLE_SIZE bound to: 1 - type: integer 
+	Parameter STALL_INPUT_LINES bound to: 0 - type: integer 
+INFO: [Synth 8-155] case statement is not full and has no default [C:/GitHubDevBoard/hdl-core-riscv-lite-v2/risc-v-v2.v:176]
+INFO: [Synth 8-6157] synthesizing module 'int_encoder' [C:/GitHubDevBoard/hdl-core-riscv-lite-v2/risc-v-v2.v:47]
+	Parameter VECTOR_INT_TABLE_SIZE bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'int_encoder' (6#1) [C:/GitHubDevBoard/hdl-core-riscv-lite-v2/risc-v-v2.v:47]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/GitHubDevBoard/hdl-core-riscv-lite-v2/risc-v-v2.v:219]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/GitHubDevBoard/hdl-core-riscv-lite-v2/risc-v-v2.v:241]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/GitHubDevBoard/hdl-core-riscv-lite-v2/risc-v-v2.v:228]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/GitHubDevBoard/hdl-core-riscv-lite-v2/risc-v-v2.v:275]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/GitHubDevBoard/hdl-core-riscv-lite-v2/risc-v-v2.v:270]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/GitHubDevBoard/hdl-core-riscv-lite-v2/risc-v-v2.v:320]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/GitHubDevBoard/hdl-core-riscv-lite-v2/risc-v-v2.v:325]
+INFO: [Synth 8-6157] synthesizing module 'regs' [C:/GitHubDevBoard/hdl-core-riscv-lite-v2/reg.v:23]
+	Parameter PLATFORM bound to: XILINX - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'regs' (7#1) [C:/GitHubDevBoard/hdl-core-riscv-lite-v2/reg.v:23]
+INFO: [Synth 8-6157] synthesizing module 'risc_v_alu_lite' [C:/GitHubDevBoard/hdl-core-riscv-lite-v2/risc-v-alu-l.v:25]
+	Parameter PLATFORM bound to: XILINX - type: string 
+	Parameter EXTENSION_M bound to: FALSE - type: string 
+	Parameter EXTENSION_MDIV bound to: FALSE - type: string 
+INFO: [Synth 8-155] case statement is not full and has no default [C:/GitHubDevBoard/hdl-core-riscv-lite-v2/risc-v-alu-l.v:235]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/GitHubDevBoard/hdl-core-riscv-lite-v2/risc-v-alu-l.v:245]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/GitHubDevBoard/hdl-core-riscv-lite-v2/risc-v-alu-l.v:312]
+INFO: [Synth 8-6155] done synthesizing module 'risc_v_alu_lite' (8#1) [C:/GitHubDevBoard/hdl-core-riscv-lite-v2/risc-v-alu-l.v:25]
+INFO: [Synth 8-6155] done synthesizing module 'risc_v' (9#1) [C:/GitHubDevBoard/hdl-core-riscv-lite-v2/risc-v-v2.v:82]
+INFO: [Synth 8-6155] done synthesizing module 'top' (10#1) [C:/GitHubDevBoard/hdl-core-riscv-lite-v2/example/xilinx/hdl-core-riscv-lite-v2.srcs/sources_1/new/top.v:39]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1020.656 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1020.656 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1020.656 ; gain = 0.000
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.032 . Memory (MB): peak = 1020.656 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/GitHub/rtl/risc-v-v2-xilinx/CmodA7_Master.xdc]
+Finished Parsing XDC File [C:/GitHub/rtl/risc-v-v2-xilinx/CmodA7_Master.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/GitHub/rtl/risc-v-v2-xilinx/CmodA7_Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+INFO: [Timing 38-2] Deriving generated clocks
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1093.766 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 1 instances were transformed.
+  MMCME2_BASE => MMCME2_ADV: 1 instance 
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1093.766 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1093.766 ; gain = 73.109
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1093.766 ; gain = 73.109
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1093.766 ; gain = 73.109
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-327] inferring latch for variable 'rd_reg' [C:/GitHubDevBoard/hdl-core-riscv-lite-v2/risc-v-alu-l.v:318]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1093.766 ; gain = 73.109
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   32 Bit       Adders := 2     
+	   3 Input   32 Bit       Adders := 1     
+	   2 Input   16 Bit       Adders := 5     
+	   2 Input    2 Bit       Adders := 1     
++---XORs : 
+	   2 Input     32 Bit         XORs := 1     
+	   2 Input      1 Bit         XORs := 4     
++---Registers : 
+	               32 Bit    Registers := 5     
+	               31 Bit    Registers := 2     
+	               16 Bit    Registers := 3     
+	                8 Bit    Registers := 5     
+	                5 Bit    Registers := 3     
+	                2 Bit    Registers := 3     
+	                1 Bit    Registers := 18    
++---RAMs : 
+	               8K Bit	(1024 X 8 bit)          RAMs := 4     
++---ROMs : 
+	                    ROMs := 2     
++---Muxes : 
+	   2 Input   32 Bit        Muxes := 13    
+	  17 Input   32 Bit        Muxes := 1     
+	  13 Input   32 Bit        Muxes := 1     
+	   7 Input   32 Bit        Muxes := 1     
+	   3 Input   16 Bit        Muxes := 3     
+	   2 Input   16 Bit        Muxes := 9     
+	  13 Input   16 Bit        Muxes := 3     
+	   2 Input    8 Bit        Muxes := 10    
+	   3 Input    8 Bit        Muxes := 2     
+	  13 Input    2 Bit        Muxes := 1     
+	   4 Input    2 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 20    
+	   4 Input    1 Bit        Muxes := 11    
+	   3 Input    1 Bit        Muxes := 3     
+	  17 Input    1 Bit        Muxes := 2     
+	  13 Input    1 Bit        Muxes := 4     
+	   7 Input    1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 1113.574 ; gain = 92.918
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Preliminary Mapping	Report (see note below)
++------------+---------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name | RTL Object          | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++------------+---------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|top         | ram_inst/mem_b0_reg | 1 K x 8(READ_FIRST)    | W | R |                        |   |   | Port A           | 1      | 0      | 
+|top         | ram_inst/mem_b1_reg | 1 K x 8(READ_FIRST)    | W | R |                        |   |   | Port A           | 1      | 0      | 
+|top         | ram_inst/mem_b2_reg | 1 K x 8(READ_FIRST)    | W | R |                        |   |   | Port A           | 1      | 0      | 
+|top         | ram_inst/mem_b3_reg | 1 K x 8(READ_FIRST)    | W | R |                        |   |   | Port A           | 1      | 0      | 
++------------+---------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
+
+Distributed RAM: Preliminary Mapping	Report (see note below)
++------------+-------------------------------+----------------+----------------------+--------------+
+|Module Name | RTL Object                    | Inference      | Size (Depth x Width) | Primitives   | 
++------------+-------------------------------+----------------+----------------------+--------------+
+|top         | risc_v_inst/regs_inst/REG_reg | User Attribute | 32 x 32              | RAM32M x 12	 | 
++------------+-------------------------------+----------------+----------------------+--------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:43 ; elapsed = 00:00:44 . Memory (MB): peak = 1113.574 ; gain = 92.918
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:02:41 ; elapsed = 00:02:42 . Memory (MB): peak = 1837.684 ; gain = 817.027
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Final Mapping	Report
++------------+---------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name | RTL Object          | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++------------+---------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|top         | ram_inst/mem_b0_reg | 1 K x 8(READ_FIRST)    | W | R |                        |   |   | Port A           | 1      | 0      | 
+|top         | ram_inst/mem_b1_reg | 1 K x 8(READ_FIRST)    | W | R |                        |   |   | Port A           | 1      | 0      | 
+|top         | ram_inst/mem_b2_reg | 1 K x 8(READ_FIRST)    | W | R |                        |   |   | Port A           | 1      | 0      | 
+|top         | ram_inst/mem_b3_reg | 1 K x 8(READ_FIRST)    | W | R |                        |   |   | Port A           | 1      | 0      | 
++------------+---------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-7052] The timing for the instance rom_dp_inst/TMP_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ram_inst/mem_b0_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ram_inst/mem_b1_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ram_inst/mem_b2_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ram_inst/mem_b3_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:02:42 ; elapsed = 00:02:43 . Memory (MB): peak = 1843.211 ; gain = 822.555
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:02:45 ; elapsed = 00:02:47 . Memory (MB): peak = 1843.211 ; gain = 822.555
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:02:45 ; elapsed = 00:02:47 . Memory (MB): peak = 1843.211 ; gain = 822.555
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:46 ; elapsed = 00:02:47 . Memory (MB): peak = 1843.211 ; gain = 822.555
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:02:46 ; elapsed = 00:02:47 . Memory (MB): peak = 1843.211 ; gain = 822.555
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:02:46 ; elapsed = 00:02:47 . Memory (MB): peak = 1843.211 ; gain = 822.555
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:02:46 ; elapsed = 00:02:47 . Memory (MB): peak = 1843.211 ; gain = 822.555
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+------------+------+
+|      |Cell        |Count |
++------+------------+------+
+|1     |BUFG        |     2|
+|2     |CARRY4      |    60|
+|3     |LUT1        |    29|
+|4     |LUT2        |   100|
+|5     |LUT3        |    68|
+|6     |LUT4        |   197|
+|7     |LUT5        |   163|
+|8     |LUT6        |   505|
+|9     |MMCME2_BASE |     1|
+|10    |RAM32M      |    12|
+|11    |RAMB18E1    |     4|
+|12    |RAMB36E1    |     1|
+|13    |FDCE        |     1|
+|14    |FDRE        |   226|
+|15    |FDSE        |     2|
+|16    |LD          |    32|
+|17    |IBUF        |     2|
+|18    |OBUF        |     5|
++------+------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:02:46 ; elapsed = 00:02:47 . Memory (MB): peak = 1843.211 ; gain = 822.555
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:02:37 ; elapsed = 00:02:45 . Memory (MB): peak = 1843.211 ; gain = 749.445
+Synthesis Optimization Complete : Time (s): cpu = 00:02:46 ; elapsed = 00:02:47 . Memory (MB): peak = 1843.211 ; gain = 822.555
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.028 . Memory (MB): peak = 1843.793 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 110 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1843.828 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 45 instances were transformed.
+  LD => LDCE: 32 instances
+  MMCME2_BASE => MMCME2_ADV: 1 instance 
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 12 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+57 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:02:55 ; elapsed = 00:02:59 . Memory (MB): peak = 1843.828 ; gain = 823.172
+INFO: [Common 17-1381] The checkpoint 'C:/GitHubDevBoard/hdl-core-riscv-lite-v2/example/xilinx/hdl-core-riscv-lite-v2.runs/synth_1/top.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Thu May 20 23:03:31 2021...

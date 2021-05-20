@@ -1,0 +1,246 @@
+# Reading pref.tcl
+# do D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2/prj/lattice/hdl_core_riscv_lite_v2/hdl_core_riscv_lite_v2.mdo
+# ** Warning: (vish-7) Failed to open lock file "D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2/prj/lattice/hdl_core_riscv_lite_v2/hdl_core_riscv_lite_v2.mpf_lock" in create mode.
+# Permission denied. (errno = EACCES)
+# ** Error: Acs sdne.
+# c
+#        Unable to replace existing ini file (D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2/prj/lattice/hdl_core_riscv_lite_v2/hdl_core_riscv_lite_v2.mpf).  File can not be renamed.
+# ** Error: Acs sdne.
+# 
+#        Unable to replace existing ini file (D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2/prj/lattice/hdl_core_riscv_lite_v2/hdl_core_riscv_lite_v2.mpf).  File can not be renamed.
+# ** Warning: (vish-7) Failed to open lock file "D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2/prj/lattice/hdl_core_riscv_lite_v2/hdl_core_riscv_lite_v2.mpf_lock" in create mode.
+# Permission denied. (errno = EACCES)
+# ** Warning: (vish-7) Failed to open lock file "D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2/prj/lattice/hdl_core_riscv_lite_v2/hdl_core_riscv_lite_v2.mpf_lock" in create mode.
+# Permission denied. (errno = EACCES)
+# ** Warning: (vish-7) Failed to open lock file "D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2/prj/lattice/hdl_core_riscv_lite_v2/hdl_core_riscv_lite_v2.mpf_lock" in create mode.
+# Permission denied. (errno = EACCES)
+# ** Warning: (vish-7) Failed to open lock file "D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2/prj/lattice/hdl_core_riscv_lite_v2/hdl_core_riscv_lite_v2.mpf_lock" in create mode.
+# Permission denied. (errno = EACCES)
+# Loading project hdl_core_riscv_lite_v2
+# ** Error: Acs sdne.
+# 
+#        Unable to replace existing ini file (D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2/prj/lattice/hdl_core_riscv_lite_v2/hdl_core_riscv_lite_v2.mpf).  File can not be renamed.
+# ** Warning: (vish-7) Failed to open lock file "D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2/prj/lattice/hdl_core_riscv_lite_v2/hdl_core_riscv_lite_v2.mpf_lock" in create mode.
+# Permission denied. (errno = EACCES)
+# ** Warning: (vish-7) Failed to open lock file "D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2/prj/lattice/hdl_core_riscv_lite_v2/hdl_core_riscv_lite_v2.mpf_lock" in create mode.
+# Permission denied. (errno = EACCES)
+# ** Warning: (vish-7) Failed to open lock file "D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2/prj/lattice/hdl_core_riscv_lite_v2/hdl_core_riscv_lite_v2.mpf_lock" in create mode.
+# Permission denied. (errno = EACCES)
+# Error 133: Unable to remove directory "D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2/prj/lattice/hdl_core_riscv_lite_v2/work".
+# Model Technology ModelSim - Lattice FPGA Edition vlog 2020.3 Compiler 2021.02 Feb 11 2021
+# Start time: 23:33:14 on May 16,2021
+# vlog -reportprogress 300 "+incdir+D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2/prj/lattice/source/impl_1" "+incdir+C:/lscc/radiant/2.2/cae_library/simulation/verilog/uaplatform" "+incdir+C:/lscc/radiant/2.2/cae_library/simulation/verilog/iCE40UP" -work work D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2/prj/lattice/source/impl_1/top.v 
+# -- Compiling module top
+# 
+# Top level modules:
+# 	top
+# End time: 23:33:14 on May 16,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Lattice FPGA Edition vlog 2020.3 Compiler 2021.02 Feb 11 2021
+# Start time: 23:33:14 on May 16,2021
+# vlog -reportprogress 300 "+incdir+D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2/prj/lattice/PLL_DEV_48M/rtl" "+incdir+C:/lscc/radiant/2.2/cae_library/simulation/verilog/uaplatform" "+incdir+C:/lscc/radiant/2.2/cae_library/simulation/verilog/iCE40UP" -work work D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2/prj/lattice/PLL_DEV_48M/rtl/PLL_DEV_48M.v 
+# -- Compiling module PLL_DEV_48M
+# -- Compiling module PLL_DEV_48M_ipgen_lscc_pll
+# 
+# Top level modules:
+# 	PLL_DEV_48M
+# End time: 23:33:14 on May 16,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Lattice FPGA Edition vlog 2020.3 Compiler 2021.02 Feb 11 2021
+# Start time: 23:33:14 on May 16,2021
+# vlog -reportprogress 300 "+incdir+D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2/prj/lattice/source/impl_1" "+incdir+C:/lscc/radiant/2.2/cae_library/simulation/verilog/uaplatform" "+incdir+C:/lscc/radiant/2.2/cae_library/simulation/verilog/iCE40UP" -work work D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2/prj/lattice/source/impl_1/arduFPGA.v 
+# -- Compiling module arduFPGA
+# ** Warning: D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2/prj/lattice/source/impl_1/arduFPGA.v(48): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+# 
+# Top level modules:
+# 	arduFPGA
+# End time: 23:33:14 on May 16,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# Model Technology ModelSim - Lattice FPGA Edition vlog 2020.3 Compiler 2021.02 Feb 11 2021
+# Start time: 23:33:14 on May 16,2021
+# vlog -reportprogress 300 "+incdir+D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2" "+incdir+C:/lscc/radiant/2.2/cae_library/simulation/verilog/uaplatform" "+incdir+C:/lscc/radiant/2.2/cae_library/simulation/verilog/iCE40UP" -work work D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2/io_bus_dmux.v 
+# -- Compiling module io_bus_dmux
+# 
+# Top level modules:
+# 	io_bus_dmux
+# End time: 23:33:15 on May 16,2021, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Lattice FPGA Edition vlog 2020.3 Compiler 2021.02 Feb 11 2021
+# Start time: 23:33:15 on May 16,2021
+# vlog -reportprogress 300 "+incdir+D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2" "+incdir+C:/lscc/radiant/2.2/cae_library/simulation/verilog/uaplatform" "+incdir+C:/lscc/radiant/2.2/cae_library/simulation/verilog/iCE40UP" -work work D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2/memory.v 
+# -- Compiling module ram
+# -- Compiling module rom_dp
+# 
+# Top level modules:
+# 	ram
+# 	rom_dp
+# End time: 23:33:15 on May 16,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Lattice FPGA Edition vlog 2020.3 Compiler 2021.02 Feb 11 2021
+# Start time: 23:33:15 on May 16,2021
+# vlog -reportprogress 300 "+incdir+D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2" "+incdir+C:/lscc/radiant/2.2/cae_library/simulation/verilog/uaplatform" "+incdir+C:/lscc/radiant/2.2/cae_library/simulation/verilog/iCE40UP" -work work D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2/reg.v 
+# -- Compiling module regs
+# 
+# Top level modules:
+# 	regs
+# End time: 23:33:15 on May 16,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Lattice FPGA Edition vlog 2020.3 Compiler 2021.02 Feb 11 2021
+# Start time: 23:33:15 on May 16,2021
+# vlog -reportprogress 300 "+incdir+D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2" "+incdir+C:/lscc/radiant/2.2/cae_library/simulation/verilog/uaplatform" "+incdir+C:/lscc/radiant/2.2/cae_library/simulation/verilog/iCE40UP" -work work D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2/risc-v-alu-l.v 
+# -- Compiling module risc_v_alu_lite
+# 
+# Top level modules:
+# 	risc_v_alu_lite
+# End time: 23:33:15 on May 16,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Lattice FPGA Edition vlog 2020.3 Compiler 2021.02 Feb 11 2021
+# Start time: 23:33:15 on May 16,2021
+# vlog -reportprogress 300 "+incdir+D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2" "+incdir+C:/lscc/radiant/2.2/cae_library/simulation/verilog/uaplatform" "+incdir+C:/lscc/radiant/2.2/cae_library/simulation/verilog/iCE40UP" -work work D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2/risc-v-l-h.v 
+# End time: 23:33:15 on May 16,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Lattice FPGA Edition vlog 2020.3 Compiler 2021.02 Feb 11 2021
+# Start time: 23:33:15 on May 16,2021
+# vlog -reportprogress 300 "+incdir+D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2" "+incdir+C:/lscc/radiant/2.2/cae_library/simulation/verilog/uaplatform" "+incdir+C:/lscc/radiant/2.2/cae_library/simulation/verilog/iCE40UP" -work work D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2/risc-v-v2.v 
+# -- Compiling module int_encoder
+# -- Compiling module risc_v
+# 
+# Top level modules:
+# 	risc_v
+# End time: 23:33:15 on May 16,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Lattice FPGA Edition vlog 2020.3 Compiler 2021.02 Feb 11 2021
+# Start time: 23:33:15 on May 16,2021
+# vlog -reportprogress 300 "+incdir+D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2/prj/lattice/source/impl_1" "+incdir+C:/lscc/radiant/2.2/cae_library/simulation/verilog/uaplatform" "+incdir+C:/lscc/radiant/2.2/cae_library/simulation/verilog/iCE40UP" -work work D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2/prj/lattice/source/impl_1/sim.v 
+# -- Compiling module sim
+# 
+# Top level modules:
+# 	sim
+# End time: 23:33:15 on May 16,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -L work -L pmi_work -L ovi_ice40up sim 
+# Start time: 23:33:15 on May 16,2021
+# //  ModelSim - Lattice FPGA Edition 2020.3 Feb 11 2021
+# //
+# //  Copyright 1991-2021 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  ModelSim - Lattice FPGA Edition and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading work.sim
+# Loading work.arduFPGA
+# Loading work.rom_dp
+# ** Error (suppressible): (vsim-3009) [TSCALE] - Module 'sim' does not have a timeunit/timeprecision specification in effect, but other modules do.
+#    Time: 0 ps  Iteration: 0  Instance: /sim/ardyFPGA_inst/rom_dp_inst File: D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2/memory.v
+# Loading work.ram
+# Loading work.io_bus_dmux
+# Loading work.risc_v
+# Loading work.int_encoder
+# Loading work.regs
+# Loading work.risc_v_alu_lite
+# Loading ovi_ice40up.BB_OD
+# Loading ovi_ice40up.OPENDRAIN_HW
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO D:\GitHubDevBoard\hdl-core-common\core\riscv\hdl-core-riscv-lite-v2\prj\lattice\hdl_core_riscv_lite_v2\hdl_core_riscv_lite_v2.mdo PAUSED at line 31
+# Compile of top.v was successful.
+# Compile of PLL_DEV_48M.v was successful.
+# Compile of arduFPGA.v was successful with warnings.
+# Compile of io_bus_dmux.v was successful.
+# Compile of memory.v was successful.
+# Compile of reg.v was successful.
+# Compile of risc-v-alu-l.v was successful.
+# Compile of risc-v-l-h.v was successful.
+# Compile of risc-v-v2.v was successful.
+# Compile of sim.v was successful.
+# 10 compiles, 0 failed with no errors.
+# Compile of top.v was successful.
+# Compile of PLL_DEV_48M.v was successful.
+# Compile of arduFPGA.v was successful with warnings.
+# Compile of io_bus_dmux.v was successful.
+# Compile of memory.v was successful.
+# Compile of reg.v was successful.
+# Compile of risc-v-alu-l.v was successful.
+# Compile of risc-v-l-h.v was successful.
+# Compile of risc-v-v2.v was successful.
+# Compile of sim.v was successful.
+# 10 compiles, 0 failed with no errors.
+vsim -L work -L pmi_work -L ovi_ice40up work.sim
+# vsim -L work -L pmi_work -L ovi_ice40up work.sim 
+# Start time: 23:33:15 on May 16,2021
+# Loading work.sim
+# Loading work.arduFPGA
+# Loading work.rom_dp
+# Loading work.ram
+# Loading work.io_bus_dmux
+# Loading work.risc_v
+# Loading work.int_encoder
+# Loading work.regs
+# Loading work.risc_v_alu_lite
+# Loading ovi_ice40up.BB_OD
+# Loading ovi_ice40up.OPENDRAIN_HW
+add wave -position insertpoint sim:/sim/ardyFPGA_inst/*
+run
+# ** Warning: (vsim-7) Failed to open readmem file "core1ROM_LightTest.mem" in read mode.
+# No such file or directory. (errno = ENOENT)    : D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2/memory.v(610)
+#    Time: 0 ps  Iteration: 0  Region: /sim/ardyFPGA_inst/rom_dp_inst/genblk1
+# Compile of top.v was successful.
+# Compile of PLL_DEV_48M.v was successful.
+# Compile of arduFPGA.v was successful with warnings.
+# Compile of io_bus_dmux.v was successful.
+# Compile of memory.v was successful.
+# Compile of reg.v was successful.
+# Compile of risc-v-alu-l.v was successful.
+# Compile of risc-v-l-h.v was successful.
+# Compile of risc-v-v2.v was successful.
+# Compile of sim.v was successful.
+# 10 compiles, 0 failed with no errors.
+# Break key hit
+# Break key hit
+# Break key hit
+run
+# WARNING: No extended dataflow license exists
+# ** Error: Acs sdne.
+# c
+#        Unable to replace existing ini file (D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2/prj/lattice/hdl_core_riscv_lite_v2/hdl_core_riscv_lite_v2.mpf).  File can not be renamed.
+# Compile of sim.v was successful.
+# ** Error: Acs sdne.
+# c
+#        Unable to replace existing ini file (D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2/prj/lattice/hdl_core_riscv_lite_v2/hdl_core_riscv_lite_v2.mpf).  File can not be renamed.
+# Compile of top.v was successful.
+# Compile of PLL_DEV_48M.v was successful.
+# Compile of arduFPGA.v was successful with warnings.
+# Compile of io_bus_dmux.v was successful.
+# Compile of memory.v was successful.
+# Compile of reg.v was successful.
+# Compile of risc-v-alu-l.v was successful.
+# Compile of risc-v-l-h.v was successful.
+# Compile of risc-v-v2.v was successful.
+# Compile of sim.v was successful.
+# 10 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.sim
+# Loading work.arduFPGA
+# Loading work.rom_dp
+# Loading work.ram
+# Loading work.io_bus_dmux
+# Loading work.risc_v
+# Loading work.int_encoder
+# Loading work.regs
+# Loading work.risc_v_alu_lite
+run
+# ** Warning: (vsim-7) Failed to open readmem file "core1ROM_LightTest.mem" in read mode.
+# No such file or directory. (errno = ENOENT)    : D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2/memory.v(610)
+#    Time: 0 ps  Iteration: 0  Region: /sim/ardyFPGA_inst/rom_dp_inst/genblk1
+# ** Note: $finish    : D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2/prj/lattice/source/impl_1/sim.v(35)
+#    Time: 110426600 ps  Iteration: 0  Instance: /sim
+# End time: 23:37:03 on May 16,2021, Elapsed time: 0:03:48
+# Errors: 0, Warnings: 1

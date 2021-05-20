@@ -1,0 +1,25 @@
+BITGEN: Bitstream Generator Radiant Software (64-bit) 2.2.1.239.2
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995 AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems   All rights reserved.
+Copyright (c) 2002-2020 Lattice Semiconductor Corporation,  All rights reserved.
+Thu May 20 23:04:34 2021
+
+
+Command: bitgen -w -freq 0 -gui hdl_core_riscv_lite_v2_impl_1.udb 
+
+Running DRC.
+DRC detected 0 errors and 0 warnings.
+
+Preference Summary:
++---------------------------------+---------------------------------+
+|  Preference                     |  Current Setting                |
++---------------------------------+---------------------------------+
+ *  Default setting.
+ ** The specified setting matches the default setting.
+
+
+Creating bit map...
+Saving bit stream in "C:\GitHubDevBoard\hdl-core-riscv-lite-v2\example\lattice\impl_1\hdl_core_riscv_lite_v2_impl_1.bin".
+Bitstream generation complete!

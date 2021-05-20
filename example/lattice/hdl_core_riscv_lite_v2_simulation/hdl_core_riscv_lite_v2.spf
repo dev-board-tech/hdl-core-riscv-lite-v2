@@ -1,0 +1,16 @@
+<RadiantSimulationProject name="hdl_core_riscv_lite_v2" path="." simType="ModelSim" language="1" version="2.0" stage="0">
+    <Source type="VERILOG" include="none" worklib="work" path="source/impl_1/top.v"/>
+    <Source type="VERILOG" include="none" worklib="work" path="PLL_DEV_48M/rtl/PLL_DEV_48M.v"/>
+    <Source type="VERILOG" include="none" worklib="work" path="source/impl_1/arduFPGA.v"/>
+    <Source type="VERILOG" include="none" worklib="work" path="../../io_bus_dmux.v"/>
+    <Source type="VERILOG" include="none" worklib="work" path="../../memory.v"/>
+    <Source type="VERILOG" include="none" worklib="work" path="../../reg.v"/>
+    <Source type="VERILOG" include="none" worklib="work" path="../../risc-v-alu-l.v"/>
+    <Source type="VERILOG" include="none" worklib="work" path="../../risc-v-l-h.v"/>
+    <Source type="VERILOG" include="none" worklib="work" path="../../risc-v-v2.v"/>
+    <Source type="VERILOG" include="none" worklib="work" path="source/impl_1/sim.v"/>
+    <SimLib value="pmi_work ovi_ice40up"/>
+    <GlbInc value=""/>
+    <Macro value=""/>
+    <TopModule name="sim" language="VERILOG" instance=""/>
+</RadiantSimulationProject>

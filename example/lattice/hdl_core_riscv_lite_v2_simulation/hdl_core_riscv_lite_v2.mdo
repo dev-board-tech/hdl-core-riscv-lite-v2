@@ -1,0 +1,34 @@
+if {![file exists "D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2/prj/lattice/hdl_core_riscv_lite_v2/hdl_core_riscv_lite_v2.mpf"]} { 
+	project new "D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2/prj/lattice/hdl_core_riscv_lite_v2" hdl_core_riscv_lite_v2
+	project addfile "D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2/prj/lattice/source/impl_1/top.v"
+	project addfile "D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2/prj/lattice/PLL_DEV_48M/rtl/PLL_DEV_48M.v"
+	project addfile "D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2/prj/lattice/source/impl_1/arduFPGA.v"
+	project addfile "D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2/io_bus_dmux.v"
+	project addfile "D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2/memory.v"
+	project addfile "D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2/reg.v"
+	project addfile "D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2/risc-v-alu-l.v"
+	project addfile "D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2/risc-v-l-h.v"
+	project addfile "D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2/risc-v-v2.v"
+	project addfile "D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2/prj/lattice/source/impl_1/sim.v"
+	vlib  work
+	vdel -lib work -all 
+	vlib work
+
+    vlog  +incdir+D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2/prj/lattice/source/impl_1 +incdir+C:/lscc/radiant/2.2/cae_library/simulation/verilog/uaplatform +incdir+C:/lscc/radiant/2.2/cae_library/simulation/verilog/iCE40UP -work work  "D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2/prj/lattice/source/impl_1/top.v"
+    vlog  +incdir+D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2/prj/lattice/PLL_DEV_48M/rtl +incdir+C:/lscc/radiant/2.2/cae_library/simulation/verilog/uaplatform +incdir+C:/lscc/radiant/2.2/cae_library/simulation/verilog/iCE40UP -work work  "D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2/prj/lattice/PLL_DEV_48M/rtl/PLL_DEV_48M.v"
+    vlog  +incdir+D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2/prj/lattice/source/impl_1 +incdir+C:/lscc/radiant/2.2/cae_library/simulation/verilog/uaplatform +incdir+C:/lscc/radiant/2.2/cae_library/simulation/verilog/iCE40UP -work work  "D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2/prj/lattice/source/impl_1/arduFPGA.v"
+    vlog  +incdir+D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2 +incdir+C:/lscc/radiant/2.2/cae_library/simulation/verilog/uaplatform +incdir+C:/lscc/radiant/2.2/cae_library/simulation/verilog/iCE40UP -work work  "D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2/io_bus_dmux.v"
+    vlog  +incdir+D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2 +incdir+C:/lscc/radiant/2.2/cae_library/simulation/verilog/uaplatform +incdir+C:/lscc/radiant/2.2/cae_library/simulation/verilog/iCE40UP -work work  "D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2/memory.v"
+    vlog  +incdir+D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2 +incdir+C:/lscc/radiant/2.2/cae_library/simulation/verilog/uaplatform +incdir+C:/lscc/radiant/2.2/cae_library/simulation/verilog/iCE40UP -work work  "D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2/reg.v"
+    vlog  +incdir+D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2 +incdir+C:/lscc/radiant/2.2/cae_library/simulation/verilog/uaplatform +incdir+C:/lscc/radiant/2.2/cae_library/simulation/verilog/iCE40UP -work work  "D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2/risc-v-alu-l.v"
+    vlog  +incdir+D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2 +incdir+C:/lscc/radiant/2.2/cae_library/simulation/verilog/uaplatform +incdir+C:/lscc/radiant/2.2/cae_library/simulation/verilog/iCE40UP -work work  "D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2/risc-v-l-h.v"
+    vlog  +incdir+D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2 +incdir+C:/lscc/radiant/2.2/cae_library/simulation/verilog/uaplatform +incdir+C:/lscc/radiant/2.2/cae_library/simulation/verilog/iCE40UP -work work  "D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2/risc-v-v2.v"
+    vlog  +incdir+D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2/prj/lattice/source/impl_1 +incdir+C:/lscc/radiant/2.2/cae_library/simulation/verilog/uaplatform +incdir+C:/lscc/radiant/2.2/cae_library/simulation/verilog/iCE40UP -work work  "D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2/prj/lattice/source/impl_1/sim.v"
+} else {
+	project open "D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2/prj/lattice/hdl_core_riscv_lite_v2/hdl_core_riscv_lite_v2"
+	project compileoutofdate
+}
+vsim   -L work  sim  -L pmi_work -L ovi_ice40up
+view wave
+add wave /*
+run 1000ns

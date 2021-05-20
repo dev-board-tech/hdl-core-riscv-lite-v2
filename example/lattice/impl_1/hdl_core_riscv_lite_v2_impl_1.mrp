@@ -1,0 +1,339 @@
+Lattice Mapping Report File for Design Module 'hdl_core_riscv_lite_v2_impl_1'
+
+Target Vendor:        LATTICE
+Target Device:        iCE40UP5KSG48
+Target Performance:   High-Performance_1.2V
+
+Mapper:    version Radiant Software (64-bit) 2.2.1.239.2
+Mapped on: Thu May 20 23:00:54 2021
+
+Design Information
+------------------
+
+Command line:   map hdl_core_riscv_lite_v2_impl_1_syn.udb C:/GitHubDevBoard/hdl-
+     core-riscv-lite-v2/example/lattice/source/impl_1/impl_1.pdc -o
+     hdl_core_riscv_lite_v2_impl_1_map.udb -mp hdl_core_riscv_lite_v2_impl_1.mrp
+     -hierrpt -gui
+
+Design Summary
+--------------
+
+   Number of slice registers: 163 out of  5280 (3%)
+   Number of I/O registers:      0 out of   117 (0%)
+   Number of LUT4s:           1955 out of  5280 (37%)
+      Number of logic LUT4s:             1693
+      Number of inserted feedthru LUT4s:  28
+      Number of replicated LUT4s:         46
+      Number of ripple logic:             94 (188 LUT4s)
+   Number of IO sites used:   18 out of 39 (46%)
+      Number of IO sites used for general PIOs: 15
+      Number of IO sites used for I3Cs: 0 out of 2 (0%)
+      Number of IO sites used for PIOs+I3Cs: 15 out of 36 (42%)
+      (note: If I3C is not used, its site can be used as general PIO)
+      Number of IO sites used for OD+RGB IO buffers: 3 out of 3 (100%)
+   Number of DSPs:             0 out of 8 (0%)
+   Number of I2Cs:             0 out of 2 (0%)
+   Number of High Speed OSCs:  1 out of 1 (100%)
+   Number of Low Speed OSCs:   0 out of 1 (0%)
+   Number of RGB PWM:          0 out of 1 (0%)
+   Number of RGB Drivers:      0 out of 1 (0%)
+   Number of SCL FILTERs:      0 out of 2 (0%)
+   Number of SRAMs:            0 out of 4 (0%)
+   Number of WARMBOOTs:        0 out of 1 (0%)
+   Number of SPIs:             0 out of 2 (0%)
+   Number of EBRs:             20 out of 30 (66%)
+   Number of PLLs:             1 out of 1 (100%)
+   Number of Clocks:  2
+      Net sys_clk: 182 loads, 182 rising, 0 falling (Driver: Pin
+     PLL_inst.lscc_pll_inst.u_PLL_B/OUTGLOBAL)
+      Net clk: 1 loads, 1 rising, 0 falling (Driver: Pin HSOSC_inst/CLKHF)
+   Number of Clock Enables:  11
+      Net VCC_net: 61 loads, 0 SLICEs
+      Net ardyFPGA_inst.n1147: 3 loads, 3 SLICEs
+      Net ardyFPGA_inst.n5460: 16 loads, 16 SLICEs
+      Net ardyFPGA_inst.genblk1.mem_b2_N_176: 2 loads, 0 SLICEs
+      Net ardyFPGA_inst.n1150: 1 loads, 1 SLICEs
+      Net ardyFPGA_inst.risc_v_inst.n5513: 32 loads, 32 SLICEs
+      Net ardyFPGA_inst.risc_v_inst.n18392: 4 loads, 0 SLICEs
+      Net ardyFPGA_inst.risc_v_inst.n5455: 8 loads, 8 SLICEs
+      Net ardyFPGA_inst.ram_inst.genblk1.mem_b1_N_163: 2 loads, 0 SLICEs
+      Net ardyFPGA_inst.ram_inst.genblk1.mem_b3_N_201: 2 loads, 0 SLICEs
+      Net ardyFPGA_inst.ram_inst.genblk1.mem_b0_N_151: 2 loads, 0 SLICEs
+   Number of LSRs:  5
+
+                                    Page 1
+
+
+
+
+
+Design Summary (cont)
+---------------------
+      Net ardyFPGA_inst.n17978: 40 loads, 40 SLICEs
+      Net ardyFPGA_inst.n1150: 8 loads, 8 SLICEs
+      Net ardyFPGA_inst.risc_v_inst.n1983: 1 loads, 1 SLICEs
+      Net ardyFPGA_inst.risc_v_inst.n17815: 1 loads, 1 SLICEs
+      Net ardyFPGA_inst.risc_v_inst.n2678: 1 loads, 1 SLICEs
+   Top 10 highest fanout non-clock nets:
+      Net ardyFPGA_inst.risc_v_inst.n9_adj_1613: 172 loads
+      Net ardyFPGA_inst.instruction_latch[12]: 134 loads
+      Net ardyFPGA_inst.instruction_latch[13]: 123 loads
+      Net VCC_net: 109 loads
+      Net ardyFPGA_inst.risc_v_inst.instruction_latch[14]: 108 loads
+      Net ardyFPGA_inst.risc_v_inst.risc_v_alu_lite_inst.rd_31__N_1085: 107
+     loads
+      Net ardyFPGA_inst.n9: 101 loads
+      Net ardyFPGA_inst.instruction_latch[5]: 94 loads
+      Net ardyFPGA_inst.risc_v_inst.n17807: 81 loads
+      Net ardyFPGA_inst.ram_select: 74 loads
+
+
+
+
+   Number of warnings:  26
+   Number of errors:    0
+
+Design Errors/Warnings
+----------------------
+
+WARNING - map: Top module port 'MISO' does not connect to anything.
+WARNING - map: Top module port 'BTN_RIGHT' does not connect to anything.
+WARNING - map: Top module port 'BTN_LEFT' does not connect to anything.
+WARNING - map: Top module port 'BTN_UP' does not connect to anything.
+WARNING - map: Top module port 'BTN_DN' does not connect to anything.
+WARNING - map: Top module port 'BTN_BACK' does not connect to anything.
+WARNING - map: Top module port 'BTN_OK' does not connect to anything.
+WARNING - map: Top module port 'BTN_INTERRUPT' does not connect to anything.
+WARNING - map: Top module port 'uSD_CD' does not connect to anything.
+WARNING - map: Top module port 'VS_DREQ' does not connect to anything.
+WARNING - map: Top module port 'UART_RX' does not connect to anything.
+WARNING - map: Top module port 'USBP' does not connect to anything.
+WARNING - map: Top module port 'USBN' does not connect to anything.
+WARNING - map: Top module port 'MISO' does not connect to anything.
+WARNING - map: Top module port 'BTN_RIGHT' does not connect to anything.
+WARNING - map: Top module port 'BTN_LEFT' does not connect to anything.
+WARNING - map: Top module port 'BTN_UP' does not connect to anything.
+WARNING - map: Top module port 'BTN_DN' does not connect to anything.
+WARNING - map: Top module port 'BTN_BACK' does not connect to anything.
+WARNING - map: Top module port 'BTN_OK' does not connect to anything.
+WARNING - map: Top module port 'BTN_INTERRUPT' does not connect to anything.
+WARNING - map: Top module port 'uSD_CD' does not connect to anything.
+WARNING - map: Top module port 'VS_DREQ' does not connect to anything.
+WARNING - map: Top module port 'UART_RX' does not connect to anything.
+WARNING - map: Top module port 'USBP' does not connect to anything.
+WARNING - map: Top module port 'USBN' does not connect to anything.
+
+
+
+
+
+                                    Page 2
+
+
+
+
+
+IO (PIO) Attributes
+-------------------
+
++---------------------+-----------+-----------+-------+-------+-----------+
+| IO Name             | Direction | Levelmode |  IO   |  IO   | Special   |
+|                     |           |  IO_TYPE  |  REG  |  DDR  | IO Buffer |
++---------------------+-----------+-----------+-------+-------+-----------+
+| RGB2                | OUTPUT    | LVCMOS33  |       |       | OD        |
++---------------------+-----------+-----------+-------+-------+-----------+
+| RGB1                | OUTPUT    | LVCMOS33  |       |       | OD        |
++---------------------+-----------+-----------+-------+-------+-----------+
+| RGB0                | OUTPUT    | LVCMOS33  |       |       | OD        |
++---------------------+-----------+-----------+-------+-------+-----------+
+| BUZ_G               | OUTPUT    | LVCMOS33  |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| BUZ_L               | OUTPUT    | LVCMOS33  |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| UART_TX             | OUTPUT    | LVCMOS33  |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| VS_xDCS             | OUTPUT    | LVCMOS33  |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| VS_xCS              | OUTPUT    | LVCMOS33  |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| VS_RST              | OUTPUT    | LVCMOS33  |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| APP_SS              | OUTPUT    | LVCMOS33  |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| uSD_SS              | OUTPUT    | LVCMOS33  |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| DES_SS              | OUTPUT    | LVCMOS33  |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| MOSI                | OUTPUT    | LVCMOS33  |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| SCK                 | OUTPUT    | LVCMOS33  |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| OLED_RST            | OUTPUT    | LVCMOS33  |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| OLED_SS             | OUTPUT    | LVCMOS33  |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| OLED_DC             | OUTPUT    | LVCMOS33  |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+| BUZ_R               | OUTPUT    | LVCMOS33  |       |       |           |
++---------------------+-----------+-----------+-------+-------+-----------+
+
+PLL/DLL Summary
+---------------
+
+PLL 1:                                 Pin/Node Value
+  PLL Instance Name:                            PLL_inst/lscc_pll_inst/u_PLL_B
+  Input Reference Clock:               NODE     clk
+  Output Clock(CoreA):                          NONE
+  Output Clock(GlobalA):               NODE     sys_clk
+  Output Clock(CoreB):                          NONE
+  Output Clock(GlobalB):                        NONE
+  Feedback input:                      NODE
+       PLL_inst.lscc_pll_inst.feedback_w
+  Internal Feedback output:            NODE
+       PLL_inst.lscc_pll_inst.feedback_w
+  BYPASS signal:                                GND
+
+                                    Page 3
+
+
+
+
+
+PLL/DLL Summary (cont)
+----------------------
+  LATCH signal:                                 GND
+  Lock Signal:                         NODE     sig_000.FeedThruLUT
+  Input Clock Frequency (MHz):                  NA
+  Reference Divider:                            0
+  Feedback Divider:                             0
+  VCO Divider:                                  1
+  ENABLE_ICEGATE_PORTA:                         0
+  ENABLE_ICEGATE_PORTB:                         0
+  PLLOUT_SELECT_PORTA:                          SHIFTREG_0deg
+  PLLOUT_SELECT_PORTB:                          SHIFTREG_0deg
+  SHIFTREG_DIV_MODE:                            0
+  DELAY_ADJUSTMENT_MODE_RELATIVE:               FIXED
+  FDA_RELATIVE:                                 0
+  FEEDBACK_PATH:                                SIMPLE
+  DELAY_ADJUSTMENT_MODE_FEEDBACK:               FIXED
+  FDA_FEEDBACK:                                 0
+  FILTER_RANGE:                                 0
+  EXTERNAL_DIVIDE_FACTOR:                       NONE
+  TEST Mode:                                    0
+
+OSC Summary
+-----------
+
+OSC 1:                                 Pin/Node Value
+  OSC Instance Name:                            HSOSC_inst
+  Power UP:                            NODE     VCC_net
+  Enable Signal:                       NODE     VCC_net
+  OSC Output:                          NODE     clk
+  DIV Setting:                                  00
+
+ASIC Components
+---------------
+
+Instance Name: ardyFPGA_inst/rom_dp_inst/mux_49
+         Type: EBR
+Instance Name: ardyFPGA_inst/rom_dp_inst/mux_48
+         Type: EBR
+Instance Name: ardyFPGA_inst/rom_dp_inst/mux_47
+         Type: EBR
+Instance Name: ardyFPGA_inst/rom_dp_inst/mux_46
+         Type: EBR
+Instance Name: ardyFPGA_inst/rom_dp_inst/mux_45
+         Type: EBR
+Instance Name: ardyFPGA_inst/rom_dp_inst/mux_44
+         Type: EBR
+Instance Name: ardyFPGA_inst/rom_dp_inst/mux_43
+         Type: EBR
+Instance Name: ardyFPGA_inst/rom_dp_inst/mux_42
+         Type: EBR
+Instance Name: ardyFPGA_inst/risc_v_inst/regs_inst/REG_d00
+         Type: EBR
+Instance Name: ardyFPGA_inst/risc_v_inst/regs_inst/REG0
+         Type: EBR
+Instance Name: ardyFPGA_inst/risc_v_inst/regs_inst/REG_d01
+         Type: EBR
+Instance Name: ardyFPGA_inst/risc_v_inst/regs_inst/REG1
+         Type: EBR
+
+                                    Page 4
+
+
+
+
+
+ASIC Components (cont)
+----------------------
+Instance Name: ardyFPGA_inst/ram_inst/genblk1.mem_b11
+         Type: EBR
+Instance Name: ardyFPGA_inst/ram_inst/genblk1.mem_b21
+         Type: EBR
+Instance Name: ardyFPGA_inst/ram_inst/genblk1.mem_b31
+         Type: EBR
+Instance Name: ardyFPGA_inst/ram_inst/genblk1.mem_b30
+         Type: EBR
+Instance Name: ardyFPGA_inst/ram_inst/genblk1.mem_b20
+         Type: EBR
+Instance Name: ardyFPGA_inst/ram_inst/genblk1.mem_b10
+         Type: EBR
+Instance Name: ardyFPGA_inst/ram_inst/genblk1.mem_b01
+         Type: EBR
+Instance Name: ardyFPGA_inst/ram_inst/genblk1.mem_b00
+         Type: EBR
+Instance Name: HSOSC_inst
+         Type: HFOSC
+Instance Name: PLL_inst/lscc_pll_inst/u_PLL_B
+         Type: PLL
+
+Run Time and Memory Usage
+-------------------------
+
+   Total CPU Time: 1 secs
+   Total REAL Time: 0 secs
+   Peak Memory Usage: 79 MB
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                    Page 5
+
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+Copyright (c) 1995
+     AT&T Corp.   All rights reserved.
+Copyright (c) 1995-2001 Lucent
+     Technologies Inc.  All rights reserved.
+Copyright (c) 2001 Agere Systems
+     All rights reserved.
+Copyright (c) 2002-2020 Lattice Semiconductor
+     Corporation,  All rights reserved.

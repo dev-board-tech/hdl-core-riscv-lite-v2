@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RadiantProject version="4.1" title="hdl_core_riscv_lite_v2" device="iCE40UP5K-SG48I" performance_grade="High-Performance_1.2V" default_implementation="impl_1">
+    <Options/>
+    <Implementation title="impl_1" dir="impl_1" description="impl_1" synthesis="lse" default_strategy="Strategy1">
+        <Options def_top="top"/>
+        <Source name="source/impl_1/top.v" type="Verilog" type_short="Verilog">
+            <Options top_module="top"/>
+        </Source>
+        <Source name="PLL_DEV_48M/PLL_DEV_48M.ipx" type="IPX_Module" type_short="IPX">
+            <Options/>
+        </Source>
+        <Source name="source/impl_1/arduFPGA.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="../../risc-v-v2.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="../../io_bus_dmux.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="../../memory.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="../../reg.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="../../risc-v-alu-l.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="../../risc-v-l-h.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="../../../hdl-core-common/io-atmega/atmega-rtc.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="core1ROM_LightTest.mem" type="Unknown Type" type_short="Unknown">
+            <Options/>
+        </Source>
+        <Source name="core1ROM_LightTest_0.mem" type="Unknown Type" type_short="Unknown">
+            <Options/>
+        </Source>
+        <Source name="core1ROM_LightTest_1.mem" type="Unknown Type" type_short="Unknown">
+            <Options/>
+        </Source>
+        <Source name="core1ROM_LightTest_2.mem" type="Unknown Type" type_short="Unknown">
+            <Options/>
+        </Source>
+        <Source name="core1ROM_LightTest_3.mem" type="Unknown Type" type_short="Unknown">
+            <Options/>
+        </Source>
+        <Source name="hdl_core_riscv_lite_v2/hdl_core_riscv_lite_v2.spf" type="Simulation Project File" type_short="SPF">
+            <Options/>
+        </Source>
+        <Source name="sim/hdl_core_riscv_lite_v2/hdl_core_riscv_lite_v2.spf" type="Simulation Project File" type_short="SPF">
+            <Options/>
+        </Source>
+        <Source name="source/impl_1.xcf" type="Programming Project File" type_short="Programming">
+            <Options/>
+        </Source>
+        <Source name="source/impl_1/impl_1.ldc" type="LSE Design Constraints File" type_short="LDC">
+            <Options/>
+        </Source>
+        <Source name="source/impl_1/impl_1.pdc" type="Physical Constraints File" type_short="PDC">
+            <Options/>
+        </Source>
+    </Implementation>
+    <Strategy name="Strategy1" file="hdl_core_riscv_lite_v21.sty"/>
+</RadiantProject>

@@ -1,0 +1,72 @@
+D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2/prj/lattice/PLL_DEV_48M/rtl/PLL_DEV_48M.v {1 {vlog -work work -stats=none D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2/prj/lattice/PLL_DEV_48M/rtl/PLL_DEV_48M.v
+Model Technology ModelSim - Lattice FPGA Edition vlog 2020.3 Compiler 2021.02 Feb 11 2021
+-- Compiling module PLL_DEV_48M
+-- Compiling module PLL_DEV_48M_ipgen_lscc_pll
+
+Top level modules:
+	PLL_DEV_48M
+
+} {} {}} D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2/risc-v-alu-l.v {1 {vlog -work work -stats=none D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2/risc-v-alu-l.v
+Model Technology ModelSim - Lattice FPGA Edition vlog 2020.3 Compiler 2021.02 Feb 11 2021
+-- Compiling module risc_v_alu_lite
+
+Top level modules:
+	risc_v_alu_lite
+
+} {} {}} D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2/prj/lattice/source/impl_1/top.v {1 {vlog -work work -stats=none D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2/prj/lattice/source/impl_1/top.v
+Model Technology ModelSim - Lattice FPGA Edition vlog 2020.3 Compiler 2021.02 Feb 11 2021
+-- Compiling module top
+
+Top level modules:
+	top
+
+} {} {}} D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2/memory.v {1 {vlog -work work -stats=none D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2/memory.v
+Model Technology ModelSim - Lattice FPGA Edition vlog 2020.3 Compiler 2021.02 Feb 11 2021
+-- Compiling module ram
+-- Compiling module rom_dp
+
+Top level modules:
+	ram
+	rom_dp
+
+} {} {}} D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2/risc-v-v2.v {1 {vlog -work work -stats=none D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2/risc-v-v2.v
+Model Technology ModelSim - Lattice FPGA Edition vlog 2020.3 Compiler 2021.02 Feb 11 2021
+-- Compiling module int_encoder
+-- Compiling module risc_v
+
+Top level modules:
+	risc_v
+
+} {} {}} D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2/risc-v-l-h.v {1 {vlog -work work -stats=none D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2/risc-v-l-h.v
+Model Technology ModelSim - Lattice FPGA Edition vlog 2020.3 Compiler 2021.02 Feb 11 2021
+
+} {} {}} D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2/reg.v {1 {vlog -work work -stats=none D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2/reg.v
+Model Technology ModelSim - Lattice FPGA Edition vlog 2020.3 Compiler 2021.02 Feb 11 2021
+-- Compiling module regs
+
+Top level modules:
+	regs
+
+} {} {}} D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2/io_bus_dmux.v {1 {vlog -work work -stats=none D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2/io_bus_dmux.v
+Model Technology ModelSim - Lattice FPGA Edition vlog 2020.3 Compiler 2021.02 Feb 11 2021
+-- Compiling module io_bus_dmux
+
+Top level modules:
+	io_bus_dmux
+
+} {} {}} D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2/prj/lattice/source/impl_1/sim.v {1 {vlog -work work -stats=none D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2/prj/lattice/source/impl_1/sim.v
+Model Technology ModelSim - Lattice FPGA Edition vlog 2020.3 Compiler 2021.02 Feb 11 2021
+-- Compiling module sim
+
+Top level modules:
+	sim
+
+} {} {}} D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2/prj/lattice/source/impl_1/arduFPGA.v {2 {vlog -work work -stats=none D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2/prj/lattice/source/impl_1/arduFPGA.v
+Model Technology ModelSim - Lattice FPGA Edition vlog 2020.3 Compiler 2021.02 Feb 11 2021
+-- Compiling module arduFPGA
+** Warning: D:/GitHubDevBoard/hdl-core-common/core/riscv/hdl-core-riscv-lite-v2/prj/lattice/source/impl_1/arduFPGA.v(48): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+
+Top level modules:
+	arduFPGA
+
+} {} {}}
