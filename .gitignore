@@ -54,4 +54,5 @@ dkms.conf
 *.xml
 *.log
 *.html
-
+example/lattice/impl_1/
+example/lattice/hdl_core_riscv_lite_v2_tcr.dir/
