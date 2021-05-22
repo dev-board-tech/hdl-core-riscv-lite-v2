@@ -1,6 +1,0 @@
--ver "C:/lscc/radiant/2.2/ip/pmi/pmi_iCE40UP.v"
--lib pmi -vhd "C:/lscc/radiant/2.2/ip/pmi/pmi_iCE40UP.vhd"
--ver "C:/GitHubDevBoard/hdl-core-riscv-lite-v2/example/lattice/PLL_DEV_48M/rtl/PLL_DEV_48M.v"
--path "C:/GitHubDevBoard/hdl-core-riscv-lite-v2/example/lattice/PLL_DEV_48M"
--top PLL_DEV_48M
--a "iCE40UP"

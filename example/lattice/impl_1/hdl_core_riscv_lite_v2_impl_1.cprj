@@ -1,7 +1,0 @@
--ver "C:/lscc/radiant/2.2/ip/pmi/pmi_iCE40UP.v"
--lib pmi -vhd "C:/lscc/radiant/2.2/ip/pmi/pmi_iCE40UP.vhd"
--ver "C:/GitHubDevBoard/hdl-core-riscv-lite-v2/example/lattice/source/impl_1/top.v" "C:/GitHubDevBoard/hdl-core-riscv-lite-v2/example/lattice/source/impl_1/arduFPGA.v" "C:/GitHubDevBoard/hdl-core-riscv-lite-v2/risc-v-v2.v" "C:/GitHubDevBoard/hdl-core-riscv-lite-v2/io_bus_dmux.v" "C:/GitHubDevBoard/hdl-core-riscv-lite-v2/memory.v" "C:/GitHubDevBoard/hdl-core-riscv-lite-v2/reg.v" "C:/GitHubDevBoard/hdl-core-riscv-lite-v2/risc-v-alu-l.v" "C:/GitHubDevBoard/hdl-core-riscv-lite-v2/risc-v-l-h.v" "C:/GitHubDevBoard/hdl-core-common/io-atmega/atmega-rtc.v"
--sdc "C:/GitHubDevBoard/hdl-core-riscv-lite-v2/example/lattice/source/impl_1/impl_1.ldc"
--top top
--isTop
--a "iCE40UP"
