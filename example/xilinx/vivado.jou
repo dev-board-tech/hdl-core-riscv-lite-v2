@@ -1,0 +1,35 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Mon Aug 16 19:34:28 2021
+# Process ID: 15888
+# Current directory: C:/GitHubDevBoard/hdl-core-riscv-lite-v2/example/xilinx
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent15724 C:\GitHubDevBoard\hdl-core-riscv-lite-v2\example\xilinx\hdl-core-riscv-lite-v2.xpr
+# Log file: C:/GitHubDevBoard/hdl-core-riscv-lite-v2/example/xilinx/vivado.log
+# Journal file: C:/GitHubDevBoard/hdl-core-riscv-lite-v2/example/xilinx\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/GitHubDevBoard/hdl-core-riscv-lite-v2/example/xilinx/hdl-core-riscv-lite-v2.xpr
+update_compile_order -fileset sources_1
+open_hw_manager
+connect_hw_server -allow_non_jtag
+open_hw_target
+set_property PROGRAM.FILE {C:/GitHubDevBoard/hdl-core-riscv-lite-v2/example/xilinx/hdl-core-riscv-lite-v2.runs/impl_1/top.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/GitHubDevBoard/hdl-core-riscv-lite-v2/example/xilinx/hdl-core-riscv-lite-v2.runs/impl_1/top.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 16
+wait_on_run impl_1
+set_property SYSMON_REFRESH_RATE_MS 1000 [get_hw_sysmons localhost:3121/xilinx_tcf/Digilent/210328B0452AA/xc7a35t_0/SYSMON]
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/GitHubDevBoard/hdl-core-riscv-lite-v2/example/xilinx/hdl-core-riscv-lite-v2.runs/impl_1/top.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+set_property SYSMON_REFRESH_RATE_MS 1000 [get_hw_sysmons localhost:3121/xilinx_tcf/Digilent/210328B0452AA/xc7a35t_0/SYSMON]

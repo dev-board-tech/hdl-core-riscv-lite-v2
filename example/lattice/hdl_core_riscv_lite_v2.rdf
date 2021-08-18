@@ -3,25 +3,13 @@
     <Options/>
     <Implementation title="impl_1" dir="impl_1" description="impl_1" synthesis="lse" default_strategy="Strategy1">
         <Options def_top="top"/>
-        <Source name="source/impl_1/top.v" type="Verilog" type_short="Verilog">
-            <Options top_module="top"/>
-        </Source>
         <Source name="PLL_DEV_48M/PLL_DEV_48M.ipx" type="IPX_Module" type_short="IPX">
-            <Options/>
-        </Source>
-        <Source name="source/impl_1/arduFPGA.v" type="Verilog" type_short="Verilog">
-            <Options/>
-        </Source>
-        <Source name="../../risc-v-v2.v" type="Verilog" type_short="Verilog">
             <Options/>
         </Source>
         <Source name="../../io_bus_dmux.v" type="Verilog" type_short="Verilog">
             <Options/>
         </Source>
         <Source name="../../memory.v" type="Verilog" type_short="Verilog">
-            <Options/>
-        </Source>
-        <Source name="../../reg.v" type="Verilog" type_short="Verilog">
             <Options/>
         </Source>
         <Source name="../../risc-v-alu-l.v" type="Verilog" type_short="Verilog">
@@ -32,6 +20,18 @@
         </Source>
         <Source name="../../../hdl-core-common/io-atmega/atmega-rtc.v" type="Verilog" type_short="Verilog">
             <Options/>
+        </Source>
+        <Source name="../../reg.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="../../risc-v-v2.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="source/impl_1/arduFPGA.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="source/impl_1/top.v" type="Verilog" type_short="Verilog">
+            <Options top_module="top"/>
         </Source>
         <Source name="core1ROM_LightTest.mem" type="Unknown Type" type_short="Unknown">
             <Options/>
