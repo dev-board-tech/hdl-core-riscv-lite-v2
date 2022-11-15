@@ -39,7 +39,7 @@ module ram #(
 );
 
 generate
-if(PLATFORM == "XILINX")
+if(PLATFORM == "XILINX" || PLATFORM == "ALTERA")
 begin
 reg [31:0]TMP;
 (* ram_style="block" *)
@@ -619,6 +619,10 @@ module rom_dp # (
 	parameter ROM_PATH = "",
 	parameter SYNCHRONOUS_OUTPUT = "TRUE"
 	)(
+	input wr_clk,
+	input [ADDR_BUS_LEN - 1:0]addr_wr,
+	input [7:0]data_wr,
+	input wr,
 	input clk,
 	input [ADDR_BUS_LEN - 1:0]addr_p1,
 	input cs_p1,
@@ -638,9 +642,9 @@ wire [31:0]TMPO;
 
  
 generate
-if(PLATFORM == "XILINX")
+if(PLATFORM == "XILINX" || PLATFORM == "ALTERA")
 begin
-(* rom_style="block" *)
+(* ram_style="block" *)
 reg [31:0]mem[((2**ADDR_BUS_LEN) / 4) - 1:0];
 (* rom_style="block" *)
 reg [15:0]mem_l[((2**ADDR_BUS_LEN) / 4) - 1:0];
@@ -666,6 +670,16 @@ reg [31:0]p2_tmp;
 reg [31:0]out_p1_int;
 reg [15:0]out_p1_l_int;
 reg [15:0]out_p1_h_int;
+
+reg [7:0]rom_wr_tmp[2:0];
+always @ (posedge wr_clk) begin
+	if(wr) begin
+		case(addr_wr[1:0])
+		3: mem[addr_wr[ADDR_BUS_LEN-1:2]] <= {data_wr, rom_wr_tmp[2], rom_wr_tmp[1], rom_wr_tmp[0]};
+		default: rom_wr_tmp[addr_wr[1:0]] <= data_wr;
+		endcase
+	end
+end
 
 if(SYNCHRONOUS_OUTPUT == "TRUE")
 begin

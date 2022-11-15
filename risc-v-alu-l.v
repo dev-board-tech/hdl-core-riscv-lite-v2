@@ -24,7 +24,7 @@
 
 module risc_v_alu_lite # (
 	parameter PLATFORM = "XILINX",
-	parameter EXTENSION_M = "TRUE",
+	parameter EXTENSION_M = "FALSE",
 	parameter EXTENSION_MDIV = "FALSE"
 )(
 	input clk,
@@ -132,17 +132,13 @@ reg [63:0]mul_result_int;
 reg [63:0]div_result_int;
 
 generate
-always @ *
-begin
-	if(PLATFORM == "XILINX")
-	begin
+always @ * begin
+	if(PLATFORM == "XILINX" || PLATFORM == "ALTERA") begin
 		//(* use_dsp48 = "yes" *)
 		//mul_result_int = rs1 * rs2;
 		(* use_dsp48 = "yes" *)
 		div_result_int = TMP1 / TMP2;
-	end
-	else
-	begin
+	end else begin
 		//(* use_dsp48 = "yes" *)
 		//mul_result_int = rs1 * rs2;
 		(* use_dsp48 = "yes" *)
@@ -168,8 +164,7 @@ wire signed [65:0]mul_result_s_int;
 wire signed [32:0]mul_s_a;
 wire signed [32:0]mul_s_b;
 generate
-if(PLATFORM == "iCE40UP")
-begin
+if(PLATFORM == "iCE40UP") begin
 pmi_addsub
 #(
   .pmi_data_width   (32), // integer
@@ -185,8 +180,7 @@ pmi_addsub
   .Cout     ( ),  // O:
   .Overflow ( )   // O:
 );
-if(EXTENSION_M == "TRUE")
-begin
+if(EXTENSION_M == "TRUE") begin
 MUL_DEV MUL_DEV_inst(
 		.clk_i(clk), 
         .clk_en_i(1'b1),
@@ -195,9 +189,7 @@ MUL_DEV MUL_DEV_inst(
         .result_o(mul_result_s_int)
 		) ;
 end
-end
-else
-begin
+end else begin
 assign RD_ADDI_ADDIW_ADD_ADDW_SUB_SUBW = rs1 + TMP;
 assign mul_s_a = TMP1;
 assign mul_s_b = TMP2;
@@ -213,217 +205,175 @@ wire [31:0]RD_XORI_XOR = rs1 ^ TMP;
 wire [31:0]RD_ORI_OR = rs1 | TMP;
 wire [31:0]RD_ANDI_AND = rs1 & TMP;
 
-always @ *
-begin
-	//rd = 32'h00000000;
+always @ * begin
+	rd = 32'h00000000;
 	arith_inst_decode_fault = 1'b1;
 /* Set "TMP" */ /*************************************************************/
 	casex(instruction)
-	`RISC_V_ALU_INST_EXT_I_I: TMP = {{21{instruction[31]}}, instruction[30:20]};
-	default: TMP = rs2;
+		`RISC_V_ALU_INST_EXT_I_I: TMP = {{21{instruction[31]}}, instruction[30:20]};
+		default: TMP = rs2;
 	endcase
-/* Negate rs2 for substraction */ /*************************************************************/
-	if(PLATFORM == "iCE40UP")
-	begin
+/* Negate rs2 for substraction */ /*******************************************/
+	if(PLATFORM == "iCE40UP") begin
 		add_sub_int = 1'b0;
 		casex({instruction[30], instruction[25], instruction[14:12], instruction[6:0]})
-		`RISC_V_ALU_INST_EXT_I_SUB_SUBW: add_sub_int = 1'b1;
+			`RISC_V_ALU_INST_EXT_I_SUB_SUBW: add_sub_int = 1'b1;
 		endcase
-	end
-	else
-	begin
+	end else begin
 		casex({instruction[30], instruction[25], instruction[14:12], instruction[6:0]})
-		`RISC_V_ALU_INST_EXT_I_SUB_SUBW: TMP = 0 - TMP;
+			`RISC_V_ALU_INST_EXT_I_SUB_SUBW: TMP = 0 - TMP;
 		endcase
 	end
-/* Set "SRAL_INPUT_BIT" */ /*************************************************************/
+/* Set "SRAL_INPUT_BIT" */ /***************************************************/
 	casex({instruction[30], instruction[25], instruction[14:12], instruction[6:0]})
-	`RISC_V_ALU_INST_EXT_I_SRA_SRAW_SRAI_SRAIW: SRAL_INPUT_BIT <= rs1[31];
-	/*`RISC_V_ALU_INST_EXT_I_SRL_SRLW_SRLI_SRLIW*/default: SRAL_INPUT_BIT <= 1'b0;
+		`RISC_V_ALU_INST_EXT_I_SRA_SRAW_SRAI_SRAIW: SRAL_INPUT_BIT <= rs1[31];
+		/*`RISC_V_ALU_INST_EXT_I_SRL_SRLW_SRLI_SRLIW*/default: SRAL_INPUT_BIT <= 1'b0;
 	endcase
-/* Set "TMP1 & TMP2" */ /*************************************************************/
+/* Set "TMP1 & TMP2" */ /*******************************************************/
 	casex({instruction[30], instruction[25], instruction[14:12], instruction[6:0]})
-	`RISC_V_ALU_INST_EXT_M_MUL,
-	`RISC_V_ALU_INST_EXT_M_MULH: 
-	begin
-		if(EXTENSION_M == "TRUE")
-		begin
-			arith_inst_decode_fault = 1'b0;
-			TMP1 = {rs1[31:0], 1'h0};
-			TMP2 = {rs2[31:0], 1'h0};
+		`RISC_V_ALU_INST_EXT_M_MUL,
+		`RISC_V_ALU_INST_EXT_M_MULH: begin
+			if(EXTENSION_M == "TRUE") begin
+				arith_inst_decode_fault = 1'b0;
+				TMP1 = {rs1[31:0], 1'h0};
+				TMP2 = {rs2[31:0], 1'h0};
+			end
 		end
-	end
-	`RISC_V_ALU_INST_EXT_M_MULHSU: 
-	begin
-		if(EXTENSION_M == "TRUE")
-		begin
-			arith_inst_decode_fault = 1'b0;
-			TMP1 = {rs1[31:0], 1'h0};
-			TMP2 = {1'h0, rs2[31:0]};
+		`RISC_V_ALU_INST_EXT_M_MULHSU: begin
+			if(EXTENSION_M == "TRUE") begin
+				arith_inst_decode_fault = 1'b0;
+				TMP1 = {rs1[31:0], 1'h0};
+				TMP2 = {1'h0, rs2[31:0]};
+			end
 		end
-	end
-	`RISC_V_ALU_INST_EXT_M_MULHU: 
-	begin
-		if(EXTENSION_M == "TRUE")
-		begin
-			arith_inst_decode_fault = 1'b0;
-			TMP1 = {1'h0, rs1[31:0]};
-			TMP2 = {1'h0, rs2[31:0]};
+		`RISC_V_ALU_INST_EXT_M_MULHU: begin
+			if(EXTENSION_M == "TRUE") begin
+				arith_inst_decode_fault = 1'b0;
+				TMP1 = {1'h0, rs1[31:0]};
+				TMP2 = {1'h0, rs2[31:0]};
+			end
 		end
-	end
-	`RISC_V_ALU_INST_EXT_M_DIV: 
-	begin
-		if(EXTENSION_MDIV == "TRUE")
-		begin
-			arith_inst_decode_fault = 1'b0;
-			TMP1 = {1'b0, rs1[30:0], 32'h00000000};
-			TMP2 = {1'b0, rs2[30:0], 32'h00000000};
+		`RISC_V_ALU_INST_EXT_M_DIV: begin
+			if(EXTENSION_MDIV == "TRUE") begin
+				arith_inst_decode_fault = 1'b0;
+				TMP1 = {1'b0, rs1[30:0], 32'h00000000};
+				TMP2 = {1'b0, rs2[30:0], 32'h00000000};
+			end
 		end
-	end
-	`RISC_V_ALU_INST_EXT_M_DIVU: 
-	begin
-		if(EXTENSION_MDIV == "TRUE")
-		begin
-			arith_inst_decode_fault = 1'b0;
-			TMP1 = {rs1, 32'h00000000};
-			TMP2 = {rs2, 32'h00000000};
+		`RISC_V_ALU_INST_EXT_M_DIVU: begin
+			if(EXTENSION_MDIV == "TRUE") begin
+				arith_inst_decode_fault = 1'b0;
+				TMP1 = {rs1, 32'h00000000};
+				TMP2 = {rs2, 32'h00000000};
+			end
 		end
-	end
-	`RISC_V_ALU_INST_EXT_M_REM: 
-	begin
-		if(EXTENSION_MDIV == "TRUE")
-		begin
-			arith_inst_decode_fault = 1'b0;
-			TMP1 = {1'b0, rs1[30:0], 32'h00000000};
-			TMP2 = {1'b0, rs2[30:0], 32'h00000000};
+		`RISC_V_ALU_INST_EXT_M_REM: begin
+			if(EXTENSION_MDIV == "TRUE") begin
+				arith_inst_decode_fault = 1'b0;
+				TMP1 = {1'b0, rs1[30:0], 32'h00000000};
+				TMP2 = {1'b0, rs2[30:0], 32'h00000000};
+			end
 		end
-	end
-	`RISC_V_ALU_INST_EXT_M_REMU: 
-	begin
-		if(EXTENSION_MDIV == "TRUE")
-		begin
-			arith_inst_decode_fault = 1'b0;
-			TMP1 = {rs1, 32'h00000000};
-			TMP2 = {rs2, 32'h00000000};
+		`RISC_V_ALU_INST_EXT_M_REMU: begin
+			if(EXTENSION_MDIV == "TRUE") begin
+				arith_inst_decode_fault = 1'b0;
+				TMP1 = {rs1, 32'h00000000};
+				TMP2 = {rs2, 32'h00000000};
+			end
 		end
-	end
 	endcase
 /* Set "rd" */ /*************************************************************/
 	casex({instruction[30], instruction[25], instruction[14:12], instruction[6:0]})
-	`RISC_V_ALU_INST_EXT_I_ADDI_ADDIW,
-	`RISC_V_ALU_INST_EXT_I_ADD_ADDW,
-	`RISC_V_ALU_INST_EXT_I_SUB_SUBW: 
-	begin
-		arith_inst_decode_fault = 1'b0;
-		rd = RD_ADDI_ADDIW_ADD_ADDW_SUB_SUBW;//rs1 + TMP;
-	end
-	`RISC_V_ALU_INST_EXT_I_SLL_SLLW_SLLI_SLLIW: 
-	begin
-		arith_inst_decode_fault = 1'b0;
-		rd = RD_SLL_SLLW_SLLI_SLLIW;//SLL(rs1, TMP[4:0]); 
-	end
-	`RISC_V_ALU_INST_EXT_I_SLTI,
-	`RISC_V_ALU_INST_EXT_I_SLT: 
-	begin
-		arith_inst_decode_fault = 1'b0;
-		rd = RD_SLTI_SLT;//{31'h0, rs1_lt_rs2};
-	end
-	`RISC_V_ALU_INST_EXT_I_SLTIU,
-	`RISC_V_ALU_INST_EXT_I_SLTU: 
-	begin
-		arith_inst_decode_fault = 1'b0;
-		rd = RD_SLTIU_SLTU;//{31'h0, rs1_ltu_rs2};
-	end
-	`RISC_V_ALU_INST_EXT_I_SRL_SRLW_SRLI_SRLIW,
-	`RISC_V_ALU_INST_EXT_I_SRA_SRAW_SRAI_SRAIW: 
-	begin
-		arith_inst_decode_fault = 1'b0;
-		rd = RD_SRL_SRLW_SRLI_SRLIW_SRA_SRAW_SRAI_SRAIW;//SRAL_OUTPUT;
-	end
-	`RISC_V_ALU_INST_EXT_I_XORI_XOR: 
-	begin
-		arith_inst_decode_fault = 1'b0;
-		rd = RD_XORI_XOR;//rs1 ^ TMP;
-	end
-	`RISC_V_ALU_INST_EXT_I_ORI_OR: 
-	begin
-		arith_inst_decode_fault = 1'b0;
-		rd = RD_ORI_OR;//rs1 | TMP;
-	end
-	`RISC_V_ALU_INST_EXT_I_ANDI_AND: 
-	begin
-		arith_inst_decode_fault = 1'b0;
-		rd = RD_ANDI_AND;//rs1 & TMP;
-	end
+		`RISC_V_ALU_INST_EXT_I_ADDI_ADDIW,
+		`RISC_V_ALU_INST_EXT_I_ADD_ADDW,
+		`RISC_V_ALU_INST_EXT_I_SUB_SUBW: begin
+			arith_inst_decode_fault = 1'b0;
+			rd = RD_ADDI_ADDIW_ADD_ADDW_SUB_SUBW;//rs1 + TMP;
+		end
+		`RISC_V_ALU_INST_EXT_I_SLL_SLLW_SLLI_SLLIW: begin
+			arith_inst_decode_fault = 1'b0;
+			rd = RD_SLL_SLLW_SLLI_SLLIW;//SLL(rs1, TMP[4:0]); 
+		end
+		`RISC_V_ALU_INST_EXT_I_SLTI,
+		`RISC_V_ALU_INST_EXT_I_SLT: begin
+			arith_inst_decode_fault = 1'b0;
+			rd = RD_SLTI_SLT;//{31'h0, rs1_lt_rs2};
+		end
+		`RISC_V_ALU_INST_EXT_I_SLTIU,
+		`RISC_V_ALU_INST_EXT_I_SLTU: begin
+			arith_inst_decode_fault = 1'b0;
+			rd = RD_SLTIU_SLTU;//{31'h0, rs1_ltu_rs2};
+		end
+		`RISC_V_ALU_INST_EXT_I_SRL_SRLW_SRLI_SRLIW,
+		`RISC_V_ALU_INST_EXT_I_SRA_SRAW_SRAI_SRAIW: begin
+			arith_inst_decode_fault = 1'b0;
+			rd = RD_SRL_SRLW_SRLI_SRLIW_SRA_SRAW_SRAI_SRAIW;//SRAL_OUTPUT;
+		end
+		`RISC_V_ALU_INST_EXT_I_XORI_XOR: begin
+			arith_inst_decode_fault = 1'b0;
+			rd = RD_XORI_XOR;//rs1 ^ TMP;
+		end
+		`RISC_V_ALU_INST_EXT_I_ORI_OR: begin
+			arith_inst_decode_fault = 1'b0;
+			rd = RD_ORI_OR;//rs1 | TMP;
+		end
+		`RISC_V_ALU_INST_EXT_I_ANDI_AND: begin
+			arith_inst_decode_fault = 1'b0;
+			rd = RD_ANDI_AND;//rs1 & TMP;
+		end
 /*
  * M Extension
  */
-	`RISC_V_ALU_INST_EXT_M_MUL: 
-	begin
-		if(EXTENSION_M == "TRUE")
-		begin
-			arith_inst_decode_fault = 1'b0;
-			rd = mul_result_s_int[33:2];
+		`RISC_V_ALU_INST_EXT_M_MUL: begin
+			if(EXTENSION_M == "TRUE") begin
+				arith_inst_decode_fault = 1'b0;
+				rd = mul_result_s_int[33:2];
+			end
 		end
-	end
-	`RISC_V_ALU_INST_EXT_M_MULH: 
-	begin
-		if(EXTENSION_M == "TRUE")
-		begin
-			arith_inst_decode_fault = 1'b0;
-			rd = mul_result_s_int[65:34];
+		`RISC_V_ALU_INST_EXT_M_MULH: begin
+			if(EXTENSION_M == "TRUE") begin
+				arith_inst_decode_fault = 1'b0;
+				rd = mul_result_s_int[65:34];
+			end
 		end
-	end
-	`RISC_V_ALU_INST_EXT_M_MULHSU: 
-	begin
-		if(EXTENSION_M == "TRUE")
-		begin
-			arith_inst_decode_fault = 1'b0;
-			//rd = (rs1[31] ? ~mul_result_int[63:32] : mul_result_int[63:32]);
-			rd = mul_result_s_int[64:33];
+		`RISC_V_ALU_INST_EXT_M_MULHSU: begin
+			if(EXTENSION_M == "TRUE") begin
+				arith_inst_decode_fault = 1'b0;
+				//rd = (rs1[31] ? ~mul_result_int[63:32] : mul_result_int[63:32]);
+				rd = mul_result_s_int[64:33];
+			end
 		end
-	end
-	`RISC_V_ALU_INST_EXT_M_MULHU: 
-	begin
-		if(EXTENSION_M == "TRUE")
-		begin
-			arith_inst_decode_fault = 1'b0;
-			rd = mul_result_s_int[63:32];
+		`RISC_V_ALU_INST_EXT_M_MULHU: begin
+			if(EXTENSION_M == "TRUE") begin
+				arith_inst_decode_fault = 1'b0;
+				rd = mul_result_s_int[63:32];
+			end
 		end
-	end
-	`RISC_V_ALU_INST_EXT_M_DIV: 
-	begin
-		if(EXTENSION_MDIV == "TRUE")
-		begin
-			arith_inst_decode_fault = 1'b0;
-			rd = {TMP1[63] ^ TMP2[63], div_result_int[62:32]};
+		`RISC_V_ALU_INST_EXT_M_DIV: begin
+			if(EXTENSION_MDIV == "TRUE") begin
+				arith_inst_decode_fault = 1'b0;
+				rd = {TMP1[63] ^ TMP2[63], div_result_int[62:32]};
+			end
 		end
-	end
-	`RISC_V_ALU_INST_EXT_M_DIVU: 
-	begin
-		if(EXTENSION_MDIV == "TRUE")
-		begin
-			arith_inst_decode_fault = 1'b0;
-			rd = div_result_int[63:32];
+		`RISC_V_ALU_INST_EXT_M_DIVU: begin
+			if(EXTENSION_MDIV == "TRUE") begin
+				arith_inst_decode_fault = 1'b0;
+				rd = div_result_int[63:32];
+			end
 		end
-	end
-	`RISC_V_ALU_INST_EXT_M_REM: 
-	begin
-		if(EXTENSION_MDIV == "TRUE")
-		begin
-			arith_inst_decode_fault = 1'b0;
-			rd = {TMP1[63] ^ TMP2[63], div_result_int[31:1]};
+		`RISC_V_ALU_INST_EXT_M_REM: begin
+			if(EXTENSION_MDIV == "TRUE") begin
+				arith_inst_decode_fault = 1'b0;
+				rd = {TMP1[63] ^ TMP2[63], div_result_int[31:1]};
+			end
 		end
-	end
-	`RISC_V_ALU_INST_EXT_M_REMU: 
-	begin
-		if(EXTENSION_MDIV == "TRUE")
-		begin
-			arith_inst_decode_fault = 1'b0;
-			rd = div_result_int[31:0];
+		`RISC_V_ALU_INST_EXT_M_REMU: begin
+			if(EXTENSION_MDIV == "TRUE") begin
+				arith_inst_decode_fault = 1'b0;
+				rd = div_result_int[31:0];
+			end
 		end
-	end
-	//default: rd = 32'h00000000;
+		//default: rd = 32'h00000000;
 	endcase
 end
 

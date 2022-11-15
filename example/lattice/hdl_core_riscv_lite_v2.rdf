@@ -51,10 +51,10 @@
         <Source name="source/impl_1.xcf" type="Programming Project File" type_short="Programming">
             <Options/>
         </Source>
-        <Source name="source/impl_1/impl_1.ldc" type="LSE Design Constraints File" type_short="LDC">
+        <Source name="source/impl_1/arduFPGA_iCE40UP5K_game_USBC.pdc" type="Physical Constraints File" type_short="PDC">
             <Options/>
         </Source>
-        <Source name="source/impl_1/impl_1.pdc" type="Physical Constraints File" type_short="PDC">
+        <Source name="source/impl_1/impl_1.ldc" type="LSE Design Constraints File" type_short="LDC">
             <Options/>
         </Source>
     </Implementation>

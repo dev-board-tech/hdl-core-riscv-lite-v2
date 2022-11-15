@@ -54,8 +54,9 @@ dkms.conf
 *.xml
 *.log
 *.html
-example/lattice/impl_1/
-example/lattice/hdl_core_riscv_lite_v2_tcr.dir/
-example/xilinx/hdl-core-riscv-lite-v2.cache/
-example/xilinx/hdl-core-riscv-lite-v2.runs/
-example/xilinx/hdl-core-riscv-lite-v2.sim/
+*.bak
+/example/lattice/impl_1/
+/example/lattice/hdl_core_riscv_lite_v2_tcr.dir/
+/example/xilinx/hdl-core-riscv-lite-v2.cache/
+/example/xilinx/hdl-core-riscv-lite-v2.runs/
+/example/xilinx/hdl-core-riscv-lite-v2.sim/

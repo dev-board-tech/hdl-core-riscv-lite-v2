@@ -32,10 +32,10 @@ System registers in IO space
 `define REG_MSTATUS					(6'h00)	//Machine status register.
 `define REG_MIE						(6'h01)	//Machine interrupt-enable register.
 `define REG_RIP						(6'h02) //Return from interupt address.
-`define REG_MSCRATCH				(6'h03)	//Scratch register for machine trap handlers.
-`define REG_MEPC					(6'h04)	//Machine exception program counter.
+`define REG_MSCRATCH					(6'h03)	//Scratch register for machine trap handlers.
+`define REG_MEPC						(6'h04)	//Machine exception program counter.
 `define REG_MCAUSE					(6'h05)	//Machine trap cause.
-`define REG_MBADADDR				(6'h06)	//Machine bad address.
+`define REG_MBADADDR					(6'h06)	//Machine bad address.
 
 `define REG_MSTATUS_MIE_bp			3
 `define REG_MSTATUS_HIE_bp			2
@@ -61,10 +61,8 @@ function integer clogb2;
 endfunction
 
 integer j;
-always @*
-begin
-	if(VECTOR_INT_TABLE_SIZE != 0)
-	begin
+always @ * begin
+	if(VECTOR_INT_TABLE_SIZE != 0) begin
 		int_vect <= 0;
 		for (j=VECTOR_INT_TABLE_SIZE-1; j>=0; j=j-1)
 		if (int_sig_in[j]) 
@@ -84,7 +82,9 @@ module risc_v #(
 	parameter DEBUG = "FALSE",
 	parameter PLATFORM = "XILINX",
 	parameter SINGLE_BUS = "TRUE",
+	parameter READ_SIG_ENABLED = "TRUE",
 	parameter DATA_BUS_ALWAYS_CONNECTED = "TRUE",
+	parameter PRE_ADDR_REG_OUTS = "FALSE",
 	parameter ADDR_BUS_WIDTH = 16,
 	parameter RESET_VECTOR = 16'h8000,
 	parameter EXTENSION_C = "TRUE",
@@ -93,7 +93,7 @@ module risc_v #(
 	parameter WATCHDOG_CNT_WIDTH = 0,
 	parameter VECTOR_INT_TABLE_SIZE = 0,
 	parameter STALL_INPUT_LINES = 1
-	)(
+)(
 	input rst_i,
 	input clk_i,
 	input [STALL_INPUT_LINES - 1:0]core_stall_i,
@@ -113,20 +113,20 @@ module risc_v #(
 	input [(VECTOR_INT_TABLE_SIZE == 0 ? 0 : VECTOR_INT_TABLE_SIZE - 1):0]int_sig_i,
 	output reg [(VECTOR_INT_TABLE_SIZE == 0 ? 0 : VECTOR_INT_TABLE_SIZE - 1):0]int_ack_o,
 	output int_en_o
-    );
+);
 
 reg [31:0]instruction_latch;
 reg [1:0]stage_cnt;
-reg [1:0]stage_cnt_del;
+reg [1:0]stage_cnt_latch;
 reg skip_execution;
-reg skip_execution_del;
+reg skip_execution_latch;
 reg enter_interrupt;
 reg after_reset;
 reg [1:0]load_from_interrupt_stage_cnt;
 
-wire [4:0]rs1a = SINGLE_BUS == "TRUE" ? data_i[19:15] : pgm_inst_i[19:15];
+wire [4:0]rs1a = PRE_ADDR_REG_OUTS == "TRUE" ? (SINGLE_BUS == "TRUE" ? data_i[19:15] : pgm_inst_i[19:15]) : instruction_latch[19:15];
 wire [31:0]rs1;
-wire [4:0]rs2a = SINGLE_BUS == "TRUE" ? data_i[24:20] : pgm_inst_i[24:20];
+wire [4:0]rs2a = PRE_ADDR_REG_OUTS == "TRUE" ? (SINGLE_BUS == "TRUE" ? data_i[24:20] : pgm_inst_i[24:20]) : instruction_latch[24:20];
 wire [31:0]rs2;
 wire [4:0]rda = instruction_latch[11:7];
 wire [31:0]rd_alu;
@@ -142,7 +142,7 @@ wire rs1_ltu_rs2;
 
 reg [ADDR_BUS_WIDTH - 1:0] PC;
 assign pgm_addr_o = PC;
-reg [ADDR_BUS_WIDTH - 1:0] pc_delayed_1;
+reg [ADDR_BUS_WIDTH - 1:0] pc_latch_1;
 reg [ADDR_BUS_WIDTH - 1:0]RIP; /* Return Interrupt Pointer */
 
 reg [7:0]reg_mie;						//Machine interrupt-enable register.
@@ -163,24 +163,18 @@ function integer clogb2;
 endfunction
 
 always @ (posedge clk_i) begin
-	
-end
-
-always @ (posedge clk_i) begin
 	data_sysreg_int <= data_i;
 	sysreg_rd <= 1'b0;
-    if(~rst_i)
-    begin
-        if(~|data_addr_o[ADDR_BUS_WIDTH - 1:8] && data_rd_w_o)
-        begin
-    		sysreg_rd <= 1'b1;
-            case(data_addr_o[7:2])
-            `REG_MCAUSE: data_sysreg_int <= reg_mcause;
-            `REG_RIP: data_sysreg_int <= RIP;
-            `REG_MSTATUS: data_sysreg_int <= reg_mstatus;
-            endcase
-        end
-    end
+	if(~rst_i) begin
+		if(~|data_addr_o[ADDR_BUS_WIDTH - 1:8] && data_rd_w_o) begin
+			sysreg_rd <= 1'b1;
+			case(data_addr_o[7:2])
+				`REG_MCAUSE: data_sysreg_int <= reg_mcause;
+				`REG_RIP: data_sysreg_int <= RIP;
+				`REG_MSTATUS: data_sysreg_int <= reg_mstatus;
+			endcase
+		end
+	end
 end
 
 wire int_request;
@@ -189,7 +183,7 @@ wire [(VECTOR_INT_TABLE_SIZE ? (clogb2(VECTOR_INT_TABLE_SIZE) - 1) : 0)  : 0]cur
 int_encoder # (
 	.VECTOR_INT_TABLE_SIZE(VECTOR_INT_TABLE_SIZE)
 )int_encoder_inst(
-	.rst(rst),
+	.rst(rst_i),
 	.int_sig_in(int_sig_i),
 	.int_request(int_request),
 	.int_vect(current_int_vect_request)
@@ -217,7 +211,7 @@ always @ * begin
 	data_rd_h_o = 1'b0;
 	data_rd_b_o = 1'b0;
 /* ram_addr_out */
-	casex({enter_interrupt, put_int_table_addr, skip_execution_del, stage_cnt, instruction_latch})
+	casex({enter_interrupt, put_int_table_addr, skip_execution_latch, stage_cnt, instruction_latch})
 		{1'b0, 1'b0, 1'd0, 2'd1, `RISC_V_ALU_INST_EXT_I_LOAD}: begin
 			data_addr_o = rs1 + {{21{instruction_latch[31]}}, instruction_latch[30:20]};
 		end
@@ -226,9 +220,9 @@ always @ * begin
 		end
 	endcase
 /* data_read */
-	casex({enter_interrupt, skip_execution_del, stage_cnt_del, instruction_latch})
+	casex({enter_interrupt, skip_execution_latch, stage_cnt_latch, instruction_latch})
 		{1'b0, 1'b0, 2'd0, `RISC_V_ALU_INST_EXT_I_LOAD}: begin
-			if(DEBUG == "TRUE") begin
+			if(DEBUG == "TRUE" || READ_SIG_ENABLED == "TRUE") begin
 				case(instruction_latch[14:12])
 					{`RISC_V_ALU_INST_EXT_I_LB},
 					{`RISC_V_ALU_INST_EXT_I_LBU}: data_rd_b_o = 1'b1;
@@ -253,12 +247,12 @@ always @ * begin
 			rdw = 1'b1;
 		end
 		{1'b0, 1'b0, 2'bx0, `RISC_V_ALU_INST_AUIPC}: begin
-			rd = pc_delayed_1 + {instruction_latch[31:12], 12'h000} - 4;
+			rd = pc_latch_1 + {instruction_latch[31:12], 12'h000} - 4;
 			rdw = 1'b1;
 		end
 		{1'b0, 1'b0, 2'bx0, `RISC_V_ALU_INST_JAL},
 		{1'b0, 1'b0, 2'bx0, `RISC_V_ALU_INST_JALR}: begin
-			rd = pc_delayed_1;
+			rd = pc_latch_1;
 			rdw = 1'b1;
 		end
 		{1'b0, 1'b0, 2'd0, `RISC_V_ALU_INST_EXT_I_R},
@@ -268,7 +262,7 @@ always @ * begin
 
 	endcase
 /* data_write */
-	casex({enter_interrupt, skip_execution_del, stage_cnt, instruction_latch})
+	casex({enter_interrupt, skip_execution_latch, stage_cnt, instruction_latch})
 		{1'b0, 1'b0, SINGLE_BUS == "TRUE" ? 2'd1 : 2'dx, `RISC_V_ALU_INST_EXT_I_STORE}: begin
 			if(DATA_BUS_ALWAYS_CONNECTED != "TRUE") begin
 				data_o = rs2;
@@ -283,9 +277,9 @@ always @ * begin
 end
 
 always @ (posedge clk_i) begin
-	skip_execution_del <= skip_execution;
-	pc_delayed_1 <= PC;
-	stage_cnt_del <= stage_cnt;
+	skip_execution_latch <= skip_execution;
+	pc_latch_1 <= PC;
+	stage_cnt_latch <= stage_cnt;
 	stage_cnt <= 1'd0;
 	skip_execution <= 1'b0;
 	enter_interrupt = 1'b0;
@@ -295,7 +289,7 @@ always @ (posedge clk_i) begin
 		PC <= RESET_VECTOR;
 		instruction_latch = 32'h0;
 		after_reset <= 1'b1;
-		load_from_interrupt_stage_cnt <= 2'b00;
+		load_from_interrupt_stage_cnt <= 2'd0;
 		reg_mstatus[`REG_MSTATUS_MIE_bp] <= 1'b1;
     end else begin
 		after_reset <= 1'b0;
@@ -324,7 +318,7 @@ always @ (posedge clk_i) begin
             endcase
         end
 		casex({enter_interrupt, skip_execution, stage_cnt, instruction_latch})
-			{1'b0, 1'b0, 2'bx0, `RISC_V_ALU_INST_MRET}: begin
+			{1'b0, 1'b0, 2'd0, `RISC_V_ALU_INST_MRET}: begin
 				if(VECTOR_INT_TABLE_SIZE != 0) begin
 					PC <= RIP;
 					skip_execution <= 1'b1;
@@ -341,7 +335,6 @@ always @ (posedge clk_i) begin
 				if(SINGLE_BUS == "TRUE") begin
 					PC <= PC;
 					stage_cnt <= 2'd2;
-					instruction_latch = data_i;
 				end
 			end
 			{1'b0, 1'b0, 2'd0, `RISC_V_ALU_INST_EXT_I_LOAD}: begin
@@ -354,37 +347,37 @@ always @ (posedge clk_i) begin
 					stage_cnt <= 2'd2;
 				end
 			end
-			{1'b0, 1'b0, 2'bx0, `RISC_V_ALU_INST_JAL}: begin
-				PC <= (/*PC == RESET_VECTOR*/after_reset ? pc_delayed_1 : PC_FOR_AUIPC_AND_REL_JMP) + {{12{instruction_latch[31]}}, instruction_latch[19:12], instruction_latch[20], instruction_latch[30:21], 1'b0};
+			{1'b0, 1'b0, 2'd0, `RISC_V_ALU_INST_JAL}: begin
+				PC <= (/*PC == RESET_VECTOR*/after_reset ? pc_latch_1 : PC_FOR_AUIPC_AND_REL_JMP) + {{12{instruction_latch[31]}}, instruction_latch[19:12], instruction_latch[20], instruction_latch[30:21], 1'b0};
 				skip_execution <= 1'b1;
 			end
-			{1'b0, 1'b0, 2'bx0, `RISC_V_ALU_INST_JALR}: begin
+			{1'b0, 1'b0, 2'd0, `RISC_V_ALU_INST_JALR}: begin
 				PC <= PC;
 				stage_cnt <= 2'd1;
 			end
-			{1'b0, 1'b0, 2'bx1, `RISC_V_ALU_INST_JALR}: begin
+			{1'b0, 1'b0, 2'd1, `RISC_V_ALU_INST_JALR}: begin
 				skip_execution <= 1'b1;
 				PC <= {{21{instruction_latch[31]}}, instruction_latch[30:20]} + {rs1[31:1], 1'b0};
 			end
-			{1'b0, 1'b0, 2'bx0, `RISC_V_ALU_INST_BEQ_BNE},
-			{1'b0, 1'b0, 2'bx0, `RISC_V_ALU_INST_BLT_BGE},
-			{1'b0, 1'b0, 2'bx0, `RISC_V_ALU_INST_BLTU_BGEU}: begin
+			{1'b0, 1'b0, 2'd0, `RISC_V_ALU_INST_BEQ_BNE},
+			{1'b0, 1'b0, 2'd0, `RISC_V_ALU_INST_BLT_BGE},
+			{1'b0, 1'b0, 2'd0, `RISC_V_ALU_INST_BLTU_BGEU}: begin
 				PC <= PC;
 				stage_cnt <= 2'd1;
 			end
-			{1'b0, 1'b0, 2'bx1, `RISC_V_ALU_INST_BEQ_BNE}: begin
+			{1'b0, 1'b0, 2'd1, `RISC_V_ALU_INST_BEQ_BNE}: begin
 				if(rs1_eq_rs2 ^ instruction_latch[12]) begin
 					PC <= PC_FOR_AUIPC_AND_REL_JMP + {{21{instruction_latch[31]}}, instruction_latch[7], instruction_latch[30:25], instruction_latch[11:8], 1'b0};
 					skip_execution <= 1'b1;
 				end
 			end
-			{1'b0, 1'b0, 2'bx1, `RISC_V_ALU_INST_BLT_BGE}: begin
+			{1'b0, 1'b0, 2'd1, `RISC_V_ALU_INST_BLT_BGE}: begin
 				if(rs1_lt_rs2 ^ instruction_latch[12]) begin
 					PC <= PC_FOR_AUIPC_AND_REL_JMP + {{21{instruction_latch[31]}}, instruction_latch[7], instruction_latch[30:25], instruction_latch[11:8], 1'b0};
 					skip_execution <= 1'b1;
 				end
 			end
-			{1'b0, 1'b0, 2'bx1, `RISC_V_ALU_INST_BLTU_BGEU}: begin
+			{1'b0, 1'b0, 2'd1, `RISC_V_ALU_INST_BLTU_BGEU}: begin
 				if(rs1_ltu_rs2 ^ instruction_latch[12]) begin
 					PC <= PC_FOR_AUIPC_AND_REL_JMP + {{21{instruction_latch[31]}}, instruction_latch[7], instruction_latch[30:25], instruction_latch[11:8], 1'b0};
 					skip_execution <= 1'b1;
@@ -395,7 +388,8 @@ always @ (posedge clk_i) begin
 end
 
 regs # (
-	.PLATFORM(PLATFORM)
+	.PLATFORM(PLATFORM),
+	.PRE_ADDR_REG_OUTS(PRE_ADDR_REG_OUTS)
 )regs_inst(
 	.clk(clk_i),
 	.rs1a(rs1a),

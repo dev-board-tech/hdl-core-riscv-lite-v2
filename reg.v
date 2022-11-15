@@ -21,7 +21,8 @@
  */
 
 module regs # (
-	parameter PLATFORM = "XILINX"
+	parameter PLATFORM = "XILINX",
+	parameter PRE_ADDR_REG_OUTS = "TRUE"
 )(
 	input clk,
 	input [4:0]rs1a,
@@ -39,16 +40,13 @@ module regs # (
 reg [31:0]REG[0:31];
 
 integer clear_cnt;
-initial 
-begin
-	for(clear_cnt = 0; clear_cnt < 32; clear_cnt = clear_cnt + 1)
-	begin:CLEAR
+initial begin
+	for(clear_cnt = 0; clear_cnt < 32; clear_cnt = clear_cnt + 1) begin:CLEAR
 		REG[clear_cnt] <= 32'h00000000;
 	end
 end
 
-always @ (posedge clk)
-begin
+always @ (posedge clk) begin
 	if(rdw)
 		REG[rda] <= rd;
 end
@@ -66,22 +64,32 @@ reg [31:0]rd_del;
 reg rdw_del;
 
 
-always @ (posedge clk)
-begin
-	rs1a_del <= rs1a;
-	rs2a_del <= rs2a;
-	rs1r_del <= rs1r;
-	rs2r_del <= rs2r;
-	rda_del <= rda;
-	rd_del <= rd;
-	rdw_del <= rdw;
-	
-	rs1_int <= REG[rs1a];
-	rs2_int <= REG[rs2a];
-end
+generate
 
-assign rs1 = (rs1r_del && rs1a_del != 0) ? (rs1a_del == rda_del && rdw_del ? rd_del : rs1_int) : 32'h00000000;
-assign rs2 = (rs2r_del && rs2a_del != 0) ? (rs2a_del == rda_del && rdw_del ? rd_del : rs2_int) : 32'h00000000;
+if(PRE_ADDR_REG_OUTS == "TRUE") begin
+	always @ (posedge clk) begin
+		rs1a_del <= rs1a;
+		rs2a_del <= rs2a;
+		rs1r_del <= rs1r;
+		rs2r_del <= rs2r;
+		rda_del <= rda;
+		rd_del <= rd;
+		rdw_del <= rdw;
+		
+		rs1_int <= REG[rs1a];
+		rs2_int <= REG[rs2a];
+	end
+	assign rs1 = (rs1r_del && rs1a_del != 0) ? (rs1a_del == rda_del && rdw_del ? rd_del : rs1_int) : 32'h00000000;
+	assign rs2 = (rs2r_del && rs2a_del != 0) ? (rs2a_del == rda_del && rdw_del ? rd_del : rs2_int) : 32'h00000000;
+end else begin
+	always @ * begin
+		rs1_int = REG[rs1a];
+		rs2_int = REG[rs2a];
+	end
+	assign rs1 = (rs1r && rs1a != 0) ? rs1_int : 32'h00000000;
+	assign rs2 = (rs2r && rs2a != 0) ? rs2_int : 32'h00000000;
+end
+endgenerate
 
 
 endmodule

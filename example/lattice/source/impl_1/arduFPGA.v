@@ -136,19 +136,19 @@ io_bus_dmux #(
 	.NR_OF_BUSSES_IN(2),
 	.BITS_PER_BUS(32),
 	.USE_OR_METHOD("TRUE")
-	)
-	io_bus_dmux_inst(
+) io_bus_dmux_inst(
 	.bus_in({ 
 	//pioA_bus_out, 
 	ram_bus_out,
 	rom_bus_out
-	}),
+	}
+),
 	.bus_sel({
 	ram_select,
 	rom_select
 	}),
 	.bus_out(data_in)
-	);
+);
 
 
 risc_v # (
